@@ -72,14 +72,15 @@
                 ?>
             </div>
             <div class="testcase">
-                <form>
-                    <input type="text" id="submission" name="sub">
+                <form id="submission">
+                    <input type=text id="eingabe_text" name="sub">
                     <?php
                         echo "<input type='text' id='id' value='" . $id . "' hidden=true name='beispiel'>";
                     ?>
                     <input type="submit">
                 </form>
             </div>
+            <script src="./script.js"></script>
         </div>
         
     </body>
