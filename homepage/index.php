@@ -49,12 +49,12 @@
                 <a href="../ranking">Ranking</a>
                 <a href="#">
                     <?php
-                        $sql = "SELECT schuelerid FROM Person WHERE schuelerid = $schuelerid;";
+                        $sql = "SELECT email FROM Person WHERE email='9039@htl.rennweg.at';";
                         $stmt = $pdo->prepare($sql);
                         $stmt->execute();
                         $result = $stmt->fetchAll();
                         $value = current(current(array_slice($result, 0, 1)));
-                        echo $value . "@htl.rennweg.at";
+                        echo $value;
                     ?>
                 </a>
             </nav>

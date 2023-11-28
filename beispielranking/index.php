@@ -44,7 +44,7 @@
         <nav>
             <a href="../homepage"><span id="CodeLabHor"><span id="bold">CodeLab</span>Hor</span></a>
             <nav id="rightnav">
-                <a href="#">Aufgabenübersicht</a>
+                <a href="../tasks">Aufgabenübersicht</a>
                 <a href="../ranking">Ranking</a>
                 <a href="#">
                     <?php
@@ -60,28 +60,47 @@
         </nav>
 
         <div class="container">
-            <?php
-                // SQL-Abfrage ausführen
-                $sql = "SELECT * FROM Beispiel";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute();
-                $result = $stmt->fetchAll();
-
-                
-                echo "<table>";
-                echo "<th>";
-                echo "<h2>Aufgabenübersicht</h2>";
-                echo "</th>";
-                
-                foreach($result as $beispiel){
-                    echo "<tr><td>Aufgabe " . $beispiel[0] . ": " . $beispiel[1] . "</td>";
-                    echo "<td><a href='../testeinfügen/index.php?beispiel=" . $beispiel[0] . "'>Testcases einfügen</a></td>";
-                    echo "<td><a href='../beispielranking'>Ranking</a></td></tr>";
-                }
-                
-                echo "</table>";
-                
-            ?>
+            <table>
+                <th>
+                    <h2>Ranking: Eingereichte Tests</h2>
+                </th>
+                <tr>
+                    <td>#1 Max Mustermann <span id="hidden-rank">(Bre, Wappler)</span></td>
+                    <td>141</td>
+                </tr>
+                <tr>
+                    <td>#2 Justin Bieber (Imperator)</td>
+                    <td>92</td>
+                </tr>
+                <tr>
+                    <td>#3 Lionel Messi (Tribun)</td>
+                    <td>53</td>
+                </tr>
+                <tr>
+                    <td>#4 Cristiano Ronaldo (Tribun)</td>
+                    <td>53</td>
+                </tr>
+                <tr>
+                    <td>#5 August Hörandl (Senator)</td>
+                    <td>42</td>
+                </tr>
+                <tr>
+                    <td>#6 Joe Biden (Senator)</td>
+                    <td>41</td>
+                </tr>
+                <tr>
+                    <td>#7 Kylian Mbappe (Konsul)</td>
+                    <td>38</td>
+                </tr>
+                <tr>
+                    <td>#8 Martin Bierbaumer (Prätor)</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>#9 Maximilian Kniely</td>
+                    <td>1</td>
+                </tr>
+            </table>
         </div>
         
     </body>

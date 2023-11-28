@@ -4,7 +4,7 @@
     <head>
         <?php
             include('../database_conn.php');
-            $schuelerid = 9039;
+            $id = $_GET['beispiel'];
         ?>
 
         <!-- Titel der Website -->
@@ -44,7 +44,7 @@
         <nav>
             <a href="../homepage"><span id="CodeLabHor"><span id="bold">CodeLab</span>Hor</span></a>
             <nav id="rightnav">
-                <a href="#">Aufgabenübersicht</a>
+                <a href="../tasks">Aufgabenübersicht</a>
                 <a href="../ranking">Ranking</a>
                 <a href="#">
                     <?php
@@ -60,28 +60,22 @@
         </nav>
 
         <div class="container">
-            <?php
-                // SQL-Abfrage ausführen
-                $sql = "SELECT * FROM Beispiel";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute();
-                $result = $stmt->fetchAll();
-
-                
-                echo "<table>";
-                echo "<th>";
-                echo "<h2>Aufgabenübersicht</h2>";
-                echo "</th>";
-                
-                foreach($result as $beispiel){
-                    echo "<tr><td>Aufgabe " . $beispiel[0] . ": " . $beispiel[1] . "</td>";
-                    echo "<td><a href='../testeinfügen/index.php?beispiel=" . $beispiel[0] . "'>Testcases einfügen</a></td>";
-                    echo "<td><a href='../beispielranking'>Ranking</a></td></tr>";
-                }
-                
-                echo "</table>";
-                
-            ?>
+            <div class="header">
+                <?php
+                    // SQL-Abfrage ausführen
+                    $sql = "SELECT * FROM Beispiel where beispielid=$id";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute();
+                    $result = $stmt->fetchAll();
+                    echo "<p>Testcase einreichen - Aufgabe " . $result[0][0] . ": " . $result[0][1] . "</p>";
+                ?>
+            </div>
+            <div class="testcase">
+                <form>
+                    <input type="text" id="submission">
+                    <input type="submit">
+                </form>
+            </div>
         </div>
         
     </body>

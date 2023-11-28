@@ -12,8 +12,9 @@ create table Klasse(
 
 create table Person(
     personid int primary key not null auto_increment,
-    schuelerid int,
-    kuerzel varchar(3),
+    email varchar(25),
+    nachname varchar(25),
+    vorname varchar(25),
     rolle varchar(1),
     fk_klasse varchar(3),
     foreign key (fk_klasse) references Klasse(klasseid)
@@ -41,3 +42,14 @@ create table PersonTest(
     foreign key (personid) references Person(personid),
     foreign key (testid) references Testcase(testid)
 );
+
+create table Ranking(
+    abgabeid int primary key auto_increment,
+    personid int,
+    beispiel int,
+    testcases int,
+    successfull_tests int,
+    foreign key (personid) references Person(personid),
+    foreign key (beispiel) references Beispiel(beispielid),
+    foreign key (testcases) references Testcase(testid)
+)

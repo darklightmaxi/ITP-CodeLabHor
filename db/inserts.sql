@@ -8,21 +8,17 @@ VALUES
     ('5AX'),
     ('5CN');
 
-insert into Person(kuerzel, schuelerid, rolle, fk_klasse)
+insert into Person(email, nachname, vorname, rolle, fk_klasse)
 VALUES
-    # Festgelegte Schüler
-    (NULL, 9039, 'S', '5AX'),   #Maxi
-    (NULL, 9038, 'S', '5AX'),   #Valerie
-    (NULL, 9118, 'S', '5CN'),   #Martin
-
-    # Lehrer
-    ('BRE', NULL, 'L', NULL),
-    ('KLE', NULL, 'L', NULL),
-    ('SDO', NULL, 'L', NULL),
-    ('WAG', NULL, 'L', NULL),
-    ('ZAI', NULL, 'L', NULL),
-    ('HOR', NULL, 'L', NULL),
-    ('HOL', NULL, 'L', NULL);
+    ('9039@htl.rennweg.at', 'Kniely', 'Maximilian', 'S', '5AX'),
+    ('9118@htl.rennweg.at', 'Bierbaumer', 'Martin', 'L', NULL),
+    ('bre@htl.rennweg.at', 'Breunig', 'Franz', 'L', NULL),
+    ('hol@htl.rennweg.at', 'Hölzl', 'Günther', 'L', NULL),
+    ('kle@htl.rennweg.at', 'Klein', 'Christian', 'L', NULL),
+    ('zai@htl.rennweg.at', 'Zainzinger', 'Harald', 'L', NULL),
+    ('wag@htl.rennweg.at', 'Wagner', 'Matthias', 'L', NULL),
+    ('nic@htl.rennweg.at', 'Nickel', 'Bernhard', 'L', NULL),
+    ('bis@htl.rennweg.at', 'Bischl', 'Michael', 'L', NULL);
 
 insert into Beispiel(name)
 VALUES
@@ -35,5 +31,5 @@ VALUES
 insert into Testcase(fk_author, fk_beispiel)
 VALUES
     (1, 1),
-    (3, 1),
+    (2, 1),
     (2, 1);

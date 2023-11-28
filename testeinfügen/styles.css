@@ -1,0 +1,49 @@
+body {
+    margin: 0px;
+    background-color: #2C2C2C;
+    font-family: 'DM Sans';
+    color: #fff;
+    font-size: 1.3vw;
+}
+
+nav {
+    background-color: #252525;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #8A8A8A;
+    margin: 0 20px;
+    font-size: 22px;
+}
+
+#CodeLabHor {
+    color: #fff;
+}
+
+#bold {
+    font-weight: bold;
+}
+
+.container {
+    margin: 3.8%;                   /* Nur Gott weiß warum Margin auf einmal damit es gleich wie auf der ersten Website aussieht 3,8% sein muss statt 3%*/
+    background-color: #252525;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    flex-direction: column;
+}
+
+.header {
+    font-size: 2vw;
+}
+
+.testcase {
+    background-color: #FFF;
+}
