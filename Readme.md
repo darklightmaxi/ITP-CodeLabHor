@@ -4,7 +4,7 @@ In diesem Repo findet sich die Website des ITP-Projekts CodeLabHor.
 
 # Wichtig:
 
-1. Datenbank findet sich unter "/datenbank". Wichtig dafür ist, dass bei Datagrip nicht automatisch das File geändert bzw verwendet wird sondern nur der Text kopiert wird. Ich such noch nach einem Weg drum herum.
+1. Datenbank findet sich unter "/db". Wichtig dafür ist, dass bei Datagrip nicht automatisch das File geändert bzw verwendet wird sondern nur der Text kopiert wird. Ich such noch nach einem Weg drum herum.
 
 # TODOs:
 
