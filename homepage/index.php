@@ -3,7 +3,7 @@
 <html>
     <head>
         <?php
-            include('./database_conn.php');
+            include('../database_conn.php');
 	        $schuelerid = 9039;
         ?>
 
@@ -45,8 +45,8 @@
         <nav>
             <a href="#"><span id="CodeLabHor"><span id="bold">CodeLab</span>Hor</span></a>
             <nav id="rightnav">
-                <a href="./tasks">Aufgabenübersicht</a>
-                <a href="./ranking">Ranking</a>
+                <a href="../tasks">Aufgabenübersicht</a>
+                <a href="../ranking">Ranking</a>
                 <a href="#">
                     <?php
                         $sql = "SELECT schuelerid FROM Person WHERE schuelerid = $schuelerid;";
@@ -63,14 +63,14 @@
             <div class="left-div">
                 <h2>Aufgabenübersicht</h2>
                 <p>In dieser Übersicht erwarten dich vielfältige Aufgaben, die deine Fähigkeiten in Coding, Schreiben und kreativem Denken herausfordern und erweitern werden.</p>
-                <a href="./tasks">
+                <a href="../tasks">
                     <button class="blue-button">Los Geht's</button>
                 </a>
             </div>
             <div class="right-div">
                 <h2>Rankings</h2>
                 <p>In dieser Übersicht siehst du ein Ranking über die Schüler mit am meisten eingereichten Tests.</p>
-                <a href="./ranking">
+                <a href="../ranking">
                     <button class="blue-button">Anzeigen</button>
                 </a>
             </div>

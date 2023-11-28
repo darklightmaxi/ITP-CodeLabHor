@@ -42,7 +42,7 @@
     <body>
 
         <nav>
-            <a href="../"><span id="CodeLabHor"><span id="bold">CodeLab</span>Hor</span></a>
+            <a href="../homepage"><span id="CodeLabHor"><span id="bold">CodeLab</span>Hor</span></a>
             <nav id="rightnav">
                 <a href="#">Aufgabenübersicht</a>
                 <a href="../ranking">Ranking</a>
