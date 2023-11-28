@@ -1,0 +1,6 @@
+@Test
+public void Palindrom_Mit_Nicht_Palindrom() {
+    assertFalse(Main.isPalindrom("hello"));
+    assertFalse(Main.isPalindrom("world"));
+    assertFalse(Main.isPalindrom("This is not a palindrome"));
+}

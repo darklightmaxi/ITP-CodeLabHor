@@ -1,0 +1,7 @@
+@Test
+public void Palindrom_Mit_Palindrom() {
+    assertTrue(Main.isPalindrom("racecar"));
+    assertTrue(Main.isPalindrom("A man a plan a canal Panama"));
+    assertTrue(Main.isPalindrom("A Santa lived as a devil at NASA"));
+    assertTrue(Main.isPalindrom("No lemon, no melon"));
+}

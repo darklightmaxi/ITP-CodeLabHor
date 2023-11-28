@@ -1,0 +1,68 @@
+body {
+    margin: 0px;
+    background-color: #2C2C2C;
+    font-family: 'DM Sans'; /* Font Family auf DM Sans ändern ( ist ein Font von Google, deswegen im Head die inkludierung nötig */
+    color: #fff;
+    overflow: hidden;       /* Scrollen verhindern */
+}
+
+nav {
+    overflow: hidden;
+    background-color: #252525; /* Hintergrundfarbe ändern */
+    padding: 10px; /* Innenabstand oben und unten hinzufügen */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Stil für die Menülinks */
+nav a {
+    float: left;
+    text-decoration: none; /* Unterstreichung entfernen */
+    color: #8A8A8A; /* Textfarbe ändern */
+    margin: 0 20px; /* Außenabstand zwischen den Links */
+    display: inline;
+    font-size: 22px; /* Größe der Schrift */
+}
+
+#CodeLabHor {
+    color: #fff;
+}
+
+#bold {
+    font-weight: bold;
+}
+
+.container {
+    margin: 3%;
+    display: flex; /* Verwendet Flexbox */
+}
+
+.container p {
+    color: #8A8A8A;
+}
+  
+.left-div, .right-div {
+    flex: 1; /* Teilt den verfügbaren Platz gleichmäßig auf */
+    padding: 3%; /* Optional: Fügen Sie Abstand hinzu */
+    background-color: #252525;
+    margin: 12px;
+    border-radius: 15px;
+    padding-bottom: 14%;
+    font-size: 25px;
+}
+
+.blue-button {
+    background-color: #0D80D9;
+    color: #fff;
+    padding-top: 2%;
+    padding-right: 4%;
+    padding-bottom: 2%;
+    padding-left: 4%;
+    border: none;
+    border-radius: 5%;
+}
+
+.blue-button:hover {
+    cursor: pointer;
+}

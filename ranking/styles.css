@@ -1,0 +1,71 @@
+body {
+    margin: 0px;
+    background-color: #2C2C2C;
+    font-family: 'DM Sans';
+    color: #fff;
+    font-size: 1.3vw;
+}
+
+nav {
+    background-color: #252525;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #8A8A8A;
+    margin: 0 20px;
+    font-size: 22px;
+}
+
+#CodeLabHor {
+    color: #fff;
+}
+
+#bold {
+    font-weight: bold;
+}
+
+.container {
+    margin: 3.8%;                   /* Nur Gott weiß warum Margin auf einmal damit es gleich wie auf der ersten Website aussieht 3,8% sein muss statt 3%*/
+    display: flex;
+    background-color: #252525;
+    border-radius: 15px;
+}
+
+.container p {
+    padding: 3%;
+    margin: 12px;
+    padding-bottom: 14%;
+    font-size: 25px;
+}
+
+table {
+    float: left;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2vw;
+}
+
+td {
+    border-bottom: 2px solid #2C2C2C;
+    padding-bottom: 2vh;
+    padding-top: 3vh;
+}
+
+td:not(:first-child) {
+    float: right;
+    padding: 1vw;
+}
+
+th {
+    float: left;
+    margin-bottom: 2vh;
+}
+
+#hidden-rank {
+    color: #FFE600;
+}

@@ -1,0 +1,5 @@
+@Test
+public void Palindrom_Mit_GrossKlein_Palindrom() {
+    assertTrue(Main.isPalindrom("Madam"));
+    assertTrue(Main.isPalindrom("rAceCAr"));
+} 
