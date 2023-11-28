@@ -6,63 +6,28 @@ body {
     overflow: hidden;       /* Scrollen verhindern */
 }
 
-nav {
-    overflow: hidden;
-    background-color: #252525; /* Hintergrundfarbe ändern */
-    padding: 10px; /* Innenabstand oben und unten hinzufügen */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Stil für die Menülinks */
-nav a {
-    float: left;
-    text-decoration: none; /* Unterstreichung entfernen */
-    color: #8A8A8A; /* Textfarbe ändern */
-    margin: 0 20px; /* Außenabstand zwischen den Links */
-    display: inline;
-    font-size: 22px; /* Größe der Schrift */
-}
-
 #CodeLabHor {
     color: #fff;
 }
 
-#bold {
-    font-weight: bold;
-}
-
 .container {
-    margin: 3%;
-    display: flex; /* Verwendet Flexbox */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
 }
 
-.container p {
-    color: #8A8A8A;
-}
-  
-.left-div, .right-div {
-    flex: 1; /* Teilt den verfügbaren Platz gleichmäßig auf */
-    padding: 3%; /* Optional: Fügen Sie Abstand hinzu */
-    background-color: #252525;
-    margin: 12px;
-    border-radius: 15px;
-    padding-bottom: 14%;
-    font-size: 25px;
+.top {
+    font-size: 5vw;
 }
 
-.blue-button {
-    background-color: #0D80D9;
-    color: #fff;
-    padding-top: 2%;
-    padding-right: 4%;
-    padding-bottom: 2%;
-    padding-left: 4%;
-    border: none;
-    border-radius: 5%;
+.bot {
+    font-size: 2.5vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.blue-button:hover {
-    cursor: pointer;
+img {
+    margin-top: 3px;
 }

@@ -2,6 +2,11 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <?php
+            include('./database_conn.php');
+	        $schuelerid = 9039;
+        ?>
+
         <!-- Titel der Website -->
         <title>CodeLabHor - Die innovative Lernplattform</title>
 
@@ -33,19 +38,43 @@
         <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
+
     </head>
     <body>
+
+        <nav>
+            <a href="#"><span id="CodeLabHor"><span id="bold">CodeLab</span>Hor</span></a>
+            <nav id="rightnav">
+                <a href="./tasks">Aufgabenübersicht</a>
+                <a href="./ranking">Ranking</a>
+                <a href="#">
+                    <?php
+                        $sql = "SELECT schuelerid FROM Person WHERE schuelerid = $schuelerid;";
+                        $stmt = $pdo->prepare($sql);
+                        $stmt->execute();
+                        $result = $stmt->fetchAll();
+                        $value = current(current(array_slice($result, 0, 1)));
+                        echo $value . "@htl.rennweg.at";
+                    ?>
+                </a>
+            </nav>
+        </nav> 
         <div class="container">
-            <div class="top">
-                <p id="CodeLabHor"><b>CodeLab</b>Hor</p>
+            <div class="left-div">
+                <h2>Aufgabenübersicht</h2>
+                <p>In dieser Übersicht erwarten dich vielfältige Aufgaben, die deine Fähigkeiten in Coding, Schreiben und kreativem Denken herausfordern und erweitern werden.</p>
+                <a href="./tasks">
+                    <button class="blue-button">Los Geht's</button>
+                </a>
             </div>
-            <div class="bot">
-                <p>Login: 
-                    <a href="#">
-                        <img src="./Microsoft_Login.png"></img>
-                    </a>
-                </p>
+            <div class="right-div">
+                <h2>Rankings</h2>
+                <p>In dieser Übersicht siehst du ein Ranking über die Schüler mit am meisten eingereichten Tests.</p>
+                <a href="./ranking">
+                    <button class="blue-button">Anzeigen</button>
+                </a>
             </div>
         </div>
+        
     </body>
 </html>
