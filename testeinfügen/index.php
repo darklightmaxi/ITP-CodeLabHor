@@ -5,6 +5,7 @@
         <?php
             include('../database_conn.php');
             $id = $_GET['beispiel'];
+            //echo var_dump($_GET['sub'])
         ?>
 
         <!-- Titel der Website -->
@@ -72,7 +73,10 @@
             </div>
             <div class="testcase">
                 <form>
-                    <input type="text" id="submission">
+                    <input type="text" id="submission" name="sub">
+                    <?php
+                        echo "<input type='text' id='id' value='" . $id . "' hidden=true name='beispiel'>";
+                    ?>
                     <input type="submit">
                 </form>
             </div>
