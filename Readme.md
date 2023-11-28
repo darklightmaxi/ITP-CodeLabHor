@@ -2,11 +2,11 @@
 
 In diesem Repo findet sich die Website des ITP-Projekts CodeLabHor.
 
-# Wichtig:
+## Wichtig:
 
 1. Datenbank findet sich unter "/db". Wichtig dafür ist, dass bei Datagrip nicht automatisch das File geändert bzw verwendet wird sondern nur der Text kopiert wird. Ich such noch nach einem Weg drum herum.
 
-# TODOs:
+## TODOs:
 
 1. Bei Office Login wird keine Rolle mitgegeben, sondern nur Name, Email die für uns relevant sind -> Vorerst nur SEW Lehrer hinzufügen
 2. Datenbank anpassen an Anforderung von [1]
