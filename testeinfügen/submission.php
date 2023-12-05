@@ -12,33 +12,37 @@
 
             //echo var_dump($beispiel[0][1]); //1 ist name, 0 index
 
-            // Directory zu dem Test Folder vom jeweiligen Beispiel
-            $directory = "../beispiele/". $beispiel[0][1] . "/tests/";
-            chdir($directory);
-
             // Auflistung der Files, gespliced weil ./ und ../ interessieren mich nicht
+            
             $files = array_slice(scandir('./'), 2);
 
             // Höchste Nummer finden und 1 addieren für eindeutigen Namen
+
             $newFileNumber = 0;
             foreach ($files as $file){
                 $newFileNumber = max(explode('.', $file)[0], $newFileNumber);
             }
             $newFileNumber += 1;
             
-            $file = $directory . $newFileNumber . '.txt';
+            $file = getcwd() . '/' . $newFileNumber . '.txt';
             
             // In File schreiben
-            $dateiHandle = fopen($file, 'w');
 
-            // Daten
             $content = $_GET['sub'];
+            $myfile = fopen($file, "w") or die("Unable to open file!");
+            fwrite($myfile, $content);
+            fclose($myfile);
 
-            // Schreibe die Daten in die Datei
-            fwrite($dateiHandle, $content);
+            // Scripts ausführen 
 
-            // Schließe die Datei
-            fclose($dateiHandle);
+            // Change Directory
+
+            $directory = "../sandbox/";
+            chdir($directory);
+
+            // Execute der Bash befehle
+
+            
 
         ?>
 

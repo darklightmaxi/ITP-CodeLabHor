@@ -41,7 +41,7 @@
             </div>
             <div class="bot">
                 <p>Login: 
-                    <a href="#">
+                    <a href="./homepage">
                         <img src="./Microsoft_Login.png"></img>
                     </a>
                 </p>
