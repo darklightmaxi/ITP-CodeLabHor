@@ -5,7 +5,11 @@
         <?php
             include('../database_conn.php');
             $id = $_GET['beispiel'];
-            //echo var_dump($_GET['sub'])
+            //echo var_dump($_GET['sub']);         
+            $s = '@Test
+public void testCase() {
+
+}';
         ?>
 
         <!-- Titel der Website -->
@@ -72,11 +76,9 @@
                 ?>
             </div>
             <div class="testcase">
-                <form id="submission">
-                    <input type=text id="eingabe_text" name="sub">
-                    <?php
-                        echo "<input type='text' id='id' value='" . $id . "' hidden=true name='beispiel'>";
-                    ?>
+                <form id="submission" action="./submission.php">
+                    <textarea name="sub"><?php echo htmlspecialchars($s); ?></textarea>
+                    <input type="text" hidden=true value="<?php echo $id; ?>" name="beispiel">
                     <input type="submit">
                 </form>
             </div>

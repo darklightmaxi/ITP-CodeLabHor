@@ -45,5 +45,37 @@ nav a {
 }
 
 .testcase {
+    height: 30vw;
+}
+
+textarea {
     background-color: #2C2C2C;
+    color: #fff;
+    height: 80%;
+    width: 90%;
+    font-size: 15px;
+    padding: 0%;
+}
+
+#submission {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+}
+
+button {
+    margin-left: auto;
+    margin-right:5%;
+    font-size: 15px;
+    background-color: #0D80D9;
+    color: #fff;
+    padding-top: 1.5%;
+    padding-right: 3%;
+    padding-bottom: 1.5%;
+    padding-left: 3%;
+    border: none;
+    border-radius: 5%;
 }
