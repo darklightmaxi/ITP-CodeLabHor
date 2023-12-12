@@ -1,0 +1,12 @@
+codelabs.sh Skript um Sandbox auszuführen
+-c      Command, der zum starten des Graders aufgerufen werden soll
+-g      Grader
+-s      zu testende Abgabe
+-in     Input oder zB bei Java Junit file
+-out    erwarteter Output
+-v      Verdict
+-e      Error
+-w      Differenz zum erwarteten Output
+
+
+build.sh zum builden des Dockers
