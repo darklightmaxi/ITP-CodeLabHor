@@ -13,17 +13,22 @@
             //echo var_dump($beispiel[0][1]); //1 ist name, 0 index
 
             // Auflistung der Files, gespliced weil ./ und ../ interessieren mich nicht
+
+            $directory = "../beispiele/". $beispiel[0][1] . "/tests/";
+            chdir($directory);
             
-            $files = array_slice(scandir('./'), 2);
+            $files = array_slice(scandir("./"), 2);
 
             // Höchste Nummer finden und 1 addieren für eindeutigen Namen
+
+            //echo var_dump($files)[0];
 
             $newFileNumber = 0;
             foreach ($files as $file){
                 $newFileNumber = max(explode('.', $file)[0], $newFileNumber);
             }
             $newFileNumber += 1;
-            
+
             $file = getcwd() . '/' . $newFileNumber . '.txt';
             
             // In File schreiben
@@ -33,16 +38,10 @@
             fwrite($myfile, $content);
             fclose($myfile);
 
-            // Scripts ausführen 
-
-            // Change Directory
-
-            $directory = "../sandbox/";
-            chdir($directory);
-
             // Execute der Bash befehle
 
-            
+            chdir("../../../");
+            echo getcwd();
 
         ?>
 
@@ -100,7 +99,7 @@
 
         <div class="container">
             <div class="header">
-                
+                <p> Test wurde Submitted </p>
             </div>
             <div class="testcase">
                 
