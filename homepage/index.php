@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
+
+?>
 <!-- Main Website -->
 <!DOCTYPE html>
 <html>
@@ -79,3 +85,7 @@
         </div>
     </body>
 </html>
+    <?php
+}else{
+    header("Location: ../index.php");
+}
