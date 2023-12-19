@@ -1,0 +1,2 @@
+touch submission/javaprint/error submission/javaprint/verdict
+bash codelabs/codelabs.sh -c $PWD/codelabs/start.sh -g $PWD/grader/junit.sh -s $PWD/submission/javaprint/submission.java -in $PWD/test/print/0/test.java -out /dev/null -v $PWD/submission/javaprint/verdict -e $PWD/submission/javaprint/error -w /dev/null -m 1g -t 10
