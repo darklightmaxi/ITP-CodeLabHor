@@ -56,12 +56,8 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                 <a href="../ranking">Ranking</a>
                 <a href="#">
                     <?php
-                        $sql = "SELECT email FROM Person WHERE email='9039@htl.rennweg.at';";
-                        $stmt = $pdo->prepare($sql);
-                        $stmt->execute();
-                        $result = $stmt->fetchAll();
-                        $value = current(current(array_slice($result, 0, 1)));
-                        echo $value;
+                        $h = $_SESSION['email'];
+                        echo $h;
                     ?>
                 </a>
                 <a href="../logout.php"><i class="fas fa-sign-out-alt"></i></a>
