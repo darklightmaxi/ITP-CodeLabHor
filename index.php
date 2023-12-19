@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
         <!-- Titel der Website -->
         <title>CodeLabHor - Die innovative Lernplattform</title>
 
@@ -35,17 +37,20 @@
         <meta name="theme-color" content="#ffffff">
     </head>
     <body>
-        <div class="container">
-            <div class="top">
-                <p id="CodeLabHor"><b>CodeLab</b>Hor</p>
-            </div>
-            <div class="bot">
-                <p>Login: 
-                    <a href="./homepage">
-                        <img src="./Microsoft_Login.png"></img>
-                    </a>
-                </p>
-            </div>
-        </div>
+        <form action="login.php" method="post">
+            <h2>Login</h2>
+            <?php if (isset($_GET['error'])){?>
+                <p class="error"><?php echo $_GET['error']; ?></p>
+            <?php } ?>
+            <label>E-Mail</label>
+            <input type="text" name="uname" placeholder="E-Mail">
+            <br>
+
+            <label>Password</label>
+            <input type="text" name="password" placeholder="Password">
+            <br>
+
+            <button type="submit">Login</button>
+        </form>
     </body>
 </html>

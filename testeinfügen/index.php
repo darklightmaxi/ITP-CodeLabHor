@@ -12,6 +12,8 @@ public void testCase() {
 }';
         ?>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (integrity hash)" crossorigin="anonymous" />
+
         <!-- Titel der Website -->
         <title>CodeLabHor - Die innovative Lernplattform</title>
 
@@ -61,6 +63,7 @@ public void testCase() {
                         echo $value;
                     ?>
                 </a>
+                <a href="../logout.php"><i class="fas fa-sign-out-alt"></i></a>
             </nav>
         </nav>
 
