@@ -1,0 +1,9 @@
+##Was ist eine Primzahl?
+Primzahlen sind natürliche Zahlen größer 1, die genau zwei Teiler haben. Sie sind nur durch sich selbst und durch 1 teilbar. Eine Zahl ist entweder eine Primzahl oder kann durch eine Primzahl geteilt werden (Primteiler).
+
+##Aufgabenstellung:
+Schreibe eine Java-Methode, die überprüft, ob der eingegebene Integer „n“ eine Primzahl ist und liefert einen boolischen Wert („true“ oder „false“). 
+ -> public static boolean isPrime(int n)
+
+##Tipp:
+https://de.wikipedia.org/wiki/Sieb_des_Eratosthenes

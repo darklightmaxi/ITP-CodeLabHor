@@ -1,0 +1,8 @@
+##Aufgabenstellung:
+Schreibe eine Java-Methode, die überprüft ob die eingegebene Jahr „year“ ein Schaltjahr ist.
+ -> public static boolean isLeapYear(int year)
+
+##Tipp:
+Ist die Jahreszahl durch vier teilbar, aber nicht durch 100, ist es ein Schaltjahr. 2008 fällt unter diese Regel.
+Ist die Jahreszahl durch 100 teilbar, aber nicht durch 400, ist es kein Schaltjahr. 2100 wird kein Schaltjahr sein.
+Ist die Jahreszahl durch 400 teilbar, dann ist es ein Schaltjahr. Deshalb war das Jahr 2000 ein Schaltjahr.

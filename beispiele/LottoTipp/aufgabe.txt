@@ -1,0 +1,11 @@
+##Aufgabenstellung:
+Schreibe eine Java-Methode, die ein Array mit 6 zufällig ausgewählten Nummern zwischen 1 und 45 zurückgibt. Achte dabei, dass keine der ausgewählten Zahlen doppelt vorkommen darf. 
+ -> public static int[] getLottoTipp()
+
+##Tipp:
+Schreibe zusätzlich eine Java-Methode, die überprüft, ob eine eingegebene Zahl bereits in einem gegebenen Array vorhanden ist und liefert einen boolischen Wert („true“ oder „false“).
+ -> public static boolean contains(int[] a, int search)
+
+Random Integer erstellen:
+ -> Random random = new Random();
+ -> int randomNumber = random.nextInt(45) + 1; //1 ist minimum, 45 maximum (beide inklusive)

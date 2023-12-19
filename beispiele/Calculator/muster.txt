@@ -1,0 +1,19 @@
+public static double calculator(double zahl1, double zahl2, String operator){
+    double ergebnis = 0.0;
+
+    switch (operator) {
+        case "+" -> ergebnis = zahl1 + zahl2;
+        case "-" -> ergebnis = zahl1 - zahl2;
+        case "*" -> ergebnis = zahl1 * zahl2;
+        case "/" -> {
+            if (zahl2 != 0) {
+                ergebnis = zahl1 / zahl2;
+            } else {
+                return 0;
+            }
+        }
+        default -> System.out.println("Ungültiger Operator. Gültige Operatoren sind +, -, *, /.");
+    }
+
+    return ergebnis;
+}
