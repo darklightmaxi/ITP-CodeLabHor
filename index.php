@@ -49,7 +49,7 @@
             <br>
 
             <label>Password</label>
-            <input type="text" name="password" placeholder="Password">
+            <input type="password" name="password" placeholder="Password">
             <br>
 
             <button type="submit">Login</button>
