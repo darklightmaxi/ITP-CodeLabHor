@@ -1,3 +1,4 @@
+
 ##Aufgabenstellung:
 Schreibe eine Java-Methode, die überprüft ob die eingegebene Jahr „year“ ein Schaltjahr ist.
  -> public static boolean isLeapYear(int year)
