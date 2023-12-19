@@ -1,0 +1,81 @@
+body {
+    margin: 0px;
+    background-color: #2C2C2C;
+    font-family: 'DM Sans';
+    color: #fff;
+    font-size: 1.3vw;
+}
+
+nav {
+    background-color: #252525;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #8A8A8A;
+    margin: 0 20px;
+    font-size: 22px;
+}
+
+#CodeLabHor {
+    color: #fff;
+}
+
+#bold {
+    font-weight: bold;
+}
+
+.container {
+    margin: 3.8%;                   /* Nur Gott weiß warum Margin auf einmal damit es gleich wie auf der ersten Website aussieht 3,8% sein muss statt 3%*/
+    background-color: #252525;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    flex-direction: column;
+}
+
+.header {
+    font-size: 2vw;
+}
+
+.testcase {
+    height: 30vw;
+}
+
+textarea {
+    background-color: #2C2C2C;
+    color: #fff;
+    height: 80%;
+    width: 90%;
+    font-size: 15px;
+    padding: 0%;
+}
+
+#submission {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+}
+
+button {
+    margin-left: auto;
+    margin-right:5%;
+    font-size: 15px;
+    background-color: #0D80D9;
+    color: #fff;
+    padding-top: 1.5%;
+    padding-right: 3%;
+    padding-bottom: 1.5%;
+    padding-left: 3%;
+    border: none;
+    border-radius: 5%;
+}
