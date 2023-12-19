@@ -73,3 +73,8 @@ td a {
 td a:hover {
     color: #9CC0DC;
 }
+
+.link {
+    text-decoration: none;
+    color: #fff;
+}

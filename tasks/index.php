@@ -74,9 +74,12 @@
                 echo "</th>";
                 
                 foreach($result as $beispiel){
-                    echo "<tr><td>Aufgabe " . $beispiel[0] . ": " . $beispiel[1] . "</td>";
+                    echo "<tr>";
+                    echo "<td><a href='../beispiel/index.php?beispiel=" . $beispiel[0] . "' class='link'> Aufgabe " . $beispiel[0] . ": " . $beispiel[1] . "</a></td>";
                     echo "<td><a href='../testeinfügen/index.php?beispiel=" . $beispiel[0] . "'>Testcases einfügen</a></td>";
-                    echo "<td><a href='../beispielranking'>Ranking</a></td></tr>";
+                    echo "<td><a href='../beispielranking'>Ranking</a></td>";
+                    echo "<td><a href='../beispiel/index.php?beispiel=" . $beispiel[0] . "'> Anzeigen </a></td>";
+                    echo "</tr>";
                 }
                 
                 echo "</table>";

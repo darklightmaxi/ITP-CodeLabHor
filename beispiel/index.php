@@ -7,7 +7,7 @@
             $id = $_GET['beispiel'];
             //echo var_dump($_GET['sub']);         
             $s = '@Test
-public void testCase() {
+public void Beispiel() {
 
 }';
         ?>
@@ -72,7 +72,7 @@ public void testCase() {
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute();
                     $result = $stmt->fetchAll();
-                    echo "<p>Testcase einreichen - Aufgabe " . $result[0][0] . ": " . $result[0][1] . "</p>";
+                    echo "<p>Aufgabe " . $result[0][0] . ": " . $result[0][1] . "</p>";
                 ?>
             </div>
             <div class="testcase">
