@@ -1,9 +1,6 @@
-Aufgabe 1: isPalindrom
-
-Was ist ein Palindrom?
+##Was ist Palindrom?
 Ein Palindrom ist eine Folge von Zeichen, die sich rückwärts wie vorwärts lesen lässt. Bei dieser Zeichenfolge kann es sich um ein Wort, eine Phrase, eine Zahl usw. handeln. Das Wort „rotor“ bleibt beispielsweise auch dann gleich, wenn die Zeichen rückwärts gelesen werden.
 
-Aufgabenstellung:
+##Aufgabenstellung:
 Schreibe eine Java-Methode, die überprüft, ob der eingegebene String „s“ ein Palindrom ist und liefert einen boolischen Wert („true“ oder „false“). Dabei soll die Groß-/Kleinschreibung und die Leerzeichen ignoriert werden.
-
-	public static boolean isPalindrom(String s)
+ -> public static boolean isPalindrom(String s)
