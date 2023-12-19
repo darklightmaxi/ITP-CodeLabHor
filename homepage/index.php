@@ -4,7 +4,6 @@
     <head>
         <?php
             include('../database_conn.php');
-	        $schuelerid = 9039;
         ?>
 
         <!-- Titel der Website -->

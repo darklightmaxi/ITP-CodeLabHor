@@ -5,10 +5,27 @@
         <?php
             include('../database_conn.php');
             $id = $_GET['beispiel'];
-            //echo var_dump($_GET['sub']);         
-            $s = '@Test
-public void Beispiel() {
+            //echo var_dump($_GET['sub']);
 
+            // SQL-Abfrage ausführen
+            $sql = "SELECT * FROM Beispiel where beispielid=$id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+
+            $filePath = '../beispiele/' . $result[0][1] . '/aufgabe.txt';
+            if (file_exists($filePath)) {
+                $input = file_get_contents($filePath);
+            }
+            else {
+                $input = 'Datei nicht gefunden';
+            }
+
+            $s = '
+public class Solution() {
+    public static void main(String[] args) {
+        
+    }
 }';
         ?>
 
@@ -53,11 +70,11 @@ public void Beispiel() {
                 <a href="../ranking">Ranking</a>
                 <a href="#">
                     <?php
-                        $sql = "SELECT email FROM Person WHERE email='9039@htl.rennweg.at';";
-                        $stmt = $pdo->prepare($sql);
-                        $stmt->execute();
-                        $result = $stmt->fetchAll();
-                        $value = current(current(array_slice($result, 0, 1)));
+                        $sql2 = "SELECT email FROM Person WHERE email='9039@htl.rennweg.at';";
+                        $stmt2 = $pdo->prepare($sql2);
+                        $stmt2->execute();
+                        $result2 = $stmt2->fetchAll();
+                        $value = current(current(array_slice($result2, 0, 1)));
                         echo $value;
                     ?>
                 </a>
@@ -67,20 +84,47 @@ public void Beispiel() {
         <div class="container">
             <div class="header">
                 <?php
-                    // SQL-Abfrage ausführen
-                    $sql = "SELECT * FROM Beispiel where beispielid=$id";
-                    $stmt = $pdo->prepare($sql);
-                    $stmt->execute();
-                    $result = $stmt->fetchAll();
                     echo "<p>Aufgabe " . $result[0][0] . ": " . $result[0][1] . "</p>";
                 ?>
             </div>
-            <div class="testcase">
-                <form id="submission" action="./submission.php">
-                    <textarea name="sub"><?php echo htmlspecialchars($s); ?></textarea>
-                    <input type="text" hidden=true value="<?php echo $id; ?>" name="beispiel">
-                    <input type="submit">
-                </form>
+            <div class="task">
+                <div class="input">
+                    <textarea id="input" readonly>
+                        <?php
+                            echo htmlspecialchars($input); 
+                        ?>
+                    </textarea>
+                </div>
+                <div class="code">
+                    <div class="editor">
+                        <form id="submission" action="./submission.php">
+                            <textarea name="sub">
+                                <?php 
+                                    //echo htmlspecialchars($s); 
+                                    echo htmlspecialchars($s);
+                                ?>
+                            </textarea>
+                            <input type="text" hidden=true value="<?php echo $id; ?>" name="beispiel">
+                        </form>
+                    </div>
+                    <div class="buttons">
+                        <tr>
+                            <td>
+                                <button id="scrollToTop">&#652;</button>
+                            </td>
+                            <td>
+                                <button id="test">Testfälle</button>
+                            </td>
+                            <td>
+                                <button id="ergebnisse">Ergebnisse</button>
+                            </td>
+                            <td>
+                                <button id="console">Konsole</button>
+                            </td>
+                        </tr>
+                        <button id="run">Ausführen</button>
+                    </div>
+                </div>
             </div>
             <script src="./script.js"></script>
         </div>
