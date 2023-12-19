@@ -55,6 +55,7 @@ textarea {
     width: 90%;
     font-size: 15px;
     padding: 0%;
+    resize: none;
 }
 
 #submission {

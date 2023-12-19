@@ -118,9 +118,6 @@ public class Solution() {
                             <td>
                                 <button id="ergebnisse">Ergebnisse</button>
                             </td>
-                            <td>
-                                <button id="console">Konsole</button>
-                            </td>
                         </tr>
                         <button id="run">Ausführen</button>
                     </div>
