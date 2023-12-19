@@ -13,6 +13,7 @@ create table Klasse(
 create table Person(
     personid int primary key not null auto_increment,
     email varchar(25),
+    password varchar(25),
     nachname varchar(25),
     vorname varchar(25),
     rolle varchar(1),
