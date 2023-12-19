@@ -77,12 +77,8 @@ public class Solution() {
                 <a href="../ranking">Ranking</a>
                 <a href="#">
                     <?php
-                        $sql2 = "SELECT email FROM Person WHERE email='9039@htl.rennweg.at';";
-                        $stmt2 = $pdo->prepare($sql2);
-                        $stmt2->execute();
-                        $result2 = $stmt2->fetchAll();
-                        $value = current(current(array_slice($result2, 0, 1)));
-                        echo $value;
+                        $h = $_SESSION['email'];
+                        echo $h;
                     ?>
                 </a>
                 <a href="../logout.php"><i class="fas fa-sign-out-alt"></i></a>
