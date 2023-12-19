@@ -98,7 +98,7 @@ public class Solution() {
                 <div class="code">
                     <div class="editor">
                         <form id="submission" action="./submission.php">
-                            <textarea name="sub">
+                            <textarea name="sub" id="sub">
                                 <?php 
                                     //echo htmlspecialchars($s); 
                                     echo htmlspecialchars($s);
