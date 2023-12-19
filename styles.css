@@ -32,12 +32,12 @@ label {
 }
 
 button {
-    float: right;
-    background: #555;
+    background: #0D80D9;
     padding: 10px 15px;
     color: #fff;
     border-radius: 5px;
     margin-right: 10px;
+    width: 100%;
     border: none;
 }
 
@@ -51,4 +51,9 @@ button:hover{
     padding: 10px;
     width: 95%;
     border-radius: 5px;
+}
+
+h1{
+    width: 100%;
+    text-align: center;
 }

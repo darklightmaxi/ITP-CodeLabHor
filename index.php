@@ -38,6 +38,8 @@
     </head>
     <body>
         <form action="login.php" method="post">
+            <h1>CodeLabHor</h1>
+
             <h2>Login</h2>
             <?php if (isset($_GET['error'])){?>
                 <p class="error"><?php echo $_GET['error']; ?></p>
