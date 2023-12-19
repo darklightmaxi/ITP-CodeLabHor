@@ -100,7 +100,7 @@ public class Solution() {
                 <div class="code">
                     <div class="editor">
                         <form id="submission" action="./submission.php">
-                            <textarea name="sub">
+                            <textarea name="sub" id="sub">
                                 <?php 
                                     //echo htmlspecialchars($s); 
                                     echo htmlspecialchars($s);
@@ -119,9 +119,6 @@ public class Solution() {
                             </td>
                             <td>
                                 <button id="ergebnisse">Ergebnisse</button>
-                            </td>
-                            <td>
-                                <button id="console">Konsole</button>
                             </td>
                         </tr>
                         <button id="run">Ausführen</button>

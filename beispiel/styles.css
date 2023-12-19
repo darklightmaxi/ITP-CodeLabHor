@@ -67,23 +67,35 @@ nav a {
 }
 
 .code {
-    border: 5px solid green;
     display: flex;
     flex-direction: column;
+    background-color: #252525;
 }
 
 textarea {
-    background-color: #2C2C2C;
+    background-color: #252525;
     color: #fff;
-    font-size: 15px;
+    font-size: 20px;
     padding: 0%;
     height: 100%;
     width: 100%;
     font-family: 'DM Sans';
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+#sub {
+    height: 23vw;
+    border: 1px solid grey;
+}
+
+.editor textarea {
+    background-color: #2C2C2C;
 }
 
 .buttons {
-    background-color: #2C2C2C;
+    background-color: #252525;
     display: flex;
     justify-content: space-evenly;
 }
@@ -99,6 +111,7 @@ button {
     border: none;
     border-radius: 5%;
     font-size: 15px;
+    margin: 0% 1% 0% 0%;
 }
 
 #run {

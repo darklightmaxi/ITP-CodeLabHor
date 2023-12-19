@@ -1,3 +1,4 @@
+
 ##Aufgabenstellung:
 Schreibe eine Java-Methode, die zwei Zahlen, addieren, subtrahieren, multiplizieren oder dividieren kann. Bei Divisionen durch die Null („0“) soll man „0“ zurückbekommen.
  -> public static double calculator(double zahl1, double zahl2, String operator)

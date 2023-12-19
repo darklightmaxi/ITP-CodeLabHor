@@ -1,3 +1,4 @@
+
 ##Was ist eine Primzahl?
 Primzahlen sind natürliche Zahlen größer 1, die genau zwei Teiler haben. Sie sind nur durch sich selbst und durch 1 teilbar. Eine Zahl ist entweder eine Primzahl oder kann durch eine Primzahl geteilt werden (Primteiler).
 
