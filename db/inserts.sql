@@ -8,17 +8,17 @@ VALUES
     ('5AX'),
     ('5CN');
 
-insert into Person(email, nachname, vorname, rolle, fk_klasse)
+insert into Person(email, password, nachname, vorname, rolle, fk_klasse)
 VALUES
-    ('9039@htl.rennweg.at', 'Kniely', 'Maximilian', 'S', '5AX'),
-    ('9118@htl.rennweg.at', 'Bierbaumer', 'Martin', 'L', NULL),
-    ('bre@htl.rennweg.at', 'Breunig', 'Franz', 'L', NULL),
-    ('hol@htl.rennweg.at', 'Hölzl', 'Günther', 'L', NULL),
-    ('kle@htl.rennweg.at', 'Klein', 'Christian', 'L', NULL),
-    ('zai@htl.rennweg.at', 'Zainzinger', 'Harald', 'L', NULL),
-    ('wag@htl.rennweg.at', 'Wagner', 'Matthias', 'L', NULL),
-    ('nic@htl.rennweg.at', 'Nickel', 'Bernhard', 'L', NULL),
-    ('bis@htl.rennweg.at', 'Bischl', 'Michael', 'L', NULL);
+    ('9039@htl.rennweg.at', '1', 'Kniely', 'Maximilian', 'S', '5AX'),
+    ('9118@htl.rennweg.at', '1', 'Bierbaumer', 'Martin', 'L', NULL),
+    ('bre@htl.rennweg.at', '1', 'Breunig', 'Franz', 'L', NULL),
+    ('hol@htl.rennweg.at', '1', 'Hölzl', 'Günther', 'L', NULL),
+    ('kle@htl.rennweg.at', '1', 'Klein', 'Christian', 'L', NULL),
+    ('zai@htl.rennweg.at', '1', 'Zainzinger', 'Harald', 'L', NULL),
+    ('wag@htl.rennweg.at', '1', 'Wagner', 'Matthias', 'L', NULL),
+    ('nic@htl.rennweg.at', '1', 'Nickel', 'Bernhard', 'L', NULL),
+    ('bis@htl.rennweg.at', '1', 'Bischl', 'Michael', 'L', NULL);
 
 insert into Beispiel(name)
 VALUES
