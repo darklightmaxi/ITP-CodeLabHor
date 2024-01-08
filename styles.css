@@ -1,7 +1,8 @@
 body {
     margin: 0px;
     background-color: #2C2C2C;
-    font-family: 'DM Sans'; /* Font Family auf DM Sans ändern ( ist ein Font von Google, deswegen im Head die inkludierung nötig */overflow: hidden;       /* Scrollen verhindern */
+    font-family: 'DM Sans'; /* Font Family auf DM Sans ändern ( ist ein Font von Google, deswegen im Head die inkludierung nötig */
+    overflow: hidden;       /* Scrollen verhindern */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,6 +55,12 @@ button:hover{
 }
 
 h1{
+    width: 100%;
+    text-align: center;
+}
+
+.register {
+    margin-top: 5%;
     width: 100%;
     text-align: center;
 }

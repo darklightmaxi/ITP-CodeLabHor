@@ -51,8 +51,9 @@
             <label>Password</label>
             <input type="password" name="password" placeholder="Password">
             <br>
-
-            <button type="submit">Login</button>
+            
+            <button class="login" type="submit">Login</button>
+            <a href="./register.php"><button class="register" type="submit">Register</button></a>
         </form>
     </body>
 </html>

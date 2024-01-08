@@ -114,12 +114,6 @@ public class Solution() {
                     <div class="buttons">
                         <tr>
                             <td>
-                                <button id="scrollToTop">&#652;</button>
-                            </td>
-                            <td>
-                                <button id="test">Testfälle</button>
-                            </td>
-                            <td>
                                 <button id="ergebnisse">Ergebnisse</button>
                             </td>
                         </tr>

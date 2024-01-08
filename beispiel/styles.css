@@ -97,7 +97,7 @@ textarea {
 .buttons {
     background-color: #252525;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 button {
@@ -112,6 +112,7 @@ button {
     border-radius: 5%;
     font-size: 15px;
     margin: 0% 1% 0% 0%;
+    
 }
 
 #run {
