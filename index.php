@@ -37,6 +37,7 @@
         <meta name="theme-color" content="#ffffff">
     </head>
     <body>
+        
         <form action="login.php" method="post">
             <h1>CodeLabHor</h1>
 
@@ -53,7 +54,10 @@
             <br>
             
             <button class="login" type="submit">Login</button>
-            <a href="./register.php"><button class="register" type="submit">Register</button></a>
+        </form>
+
+        <form action="register.php" method="post">
+            <button class="register" type="submit">Register</button>
         </form>
     </body>
 </html>

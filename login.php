@@ -2,6 +2,15 @@
 session_start();
 include "db_connection.php";
 
+/*$sql = "SELECT * FROM Person WHERE email='$uname';";
+$result = mysqli_query($conn, $sql);
+var_dump($result);
+
+if (!isset($_POST['uname']) || ) {
+    header("Location: register.php");
+    exit();
+}*/
+
 if (isset($_POST['uname']) && isset($_POST['password'])) {
 
     function validate($data){

@@ -49,9 +49,12 @@
             <label>Password</label>
             <input type="password" name="password" placeholder="Password">
             <br>
+
+            <label>Klasse</label>
+            <input type="text" name="class" placeholder="1AI">
+            <br>
             
-            <button class="login" type="submit">Login</button>
-            <a href="./register.php"><button class="register" type="submit">Register</button></a>
+            <button class="register" type="submit">Register</button>
         </form>
     </body>
 </html>
