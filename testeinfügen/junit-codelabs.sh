@@ -1,4 +1,4 @@
-#sudo bash junit-codelabs.sh test/submission.java test/test.java test/
+#sudo bash junit-codelabs.sh test/submission.java test/test0.java test/
 
 submission=$1
 test=$2
