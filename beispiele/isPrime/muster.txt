@@ -1,3 +1,4 @@
+public class submission {
 public static boolean isPrime(int n) {
     if (n <= 1) {
         return false;
@@ -16,4 +17,5 @@ public static boolean isPrime(int n) {
     }
 
     return true;
+}
 }

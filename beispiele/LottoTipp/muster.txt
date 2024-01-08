@@ -1,3 +1,4 @@
+public class submission {
 public static boolean contains(int[] a, int search) {
     for (int num : a) {
         if (num == search) {
@@ -20,4 +21,5 @@ public static int[] getLottoTipp(){
     }
 
     return a;
+}
 }

@@ -1,3 +1,4 @@
+public class submission {
 public static double calculator(double zahl1, double zahl2, String operator){
     double ergebnis = 0.0;
 
@@ -16,4 +17,5 @@ public static double calculator(double zahl1, double zahl2, String operator){
     }
 
     return ergebnis;
+}
 }
