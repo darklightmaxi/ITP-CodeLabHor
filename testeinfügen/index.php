@@ -12,9 +12,15 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
             include('../database_conn.php');
             $id = $_GET['beispiel'];
             //echo var_dump($_GET['sub']);         
-            $s = '@Test
-public void testCase() {
+            $s = '
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
+public class test {
+    @Test
+    public void testCase() {
+
+    }
 }';
         ?>
 

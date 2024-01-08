@@ -46,25 +46,32 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
             // Execute der Bash befehle
 
-            chdir("../../../");
-            // echo getcwd();
+            error_reporting(E_ALL);
+
+            chdir("../../../testeinfügen/");
 
             $submissionfile = "../beispiele/" . $beispiel[0][1] . "/muster.txt";
             $testfile = $file;
-            $resultfile = "temp/";
+            $resultfile = "temp";
 
-            echo ("bash junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
+            //echo ("bash junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
 
-            shell_exec("bash junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
+            set_time_limit(3);
 
-            $resultfile = fopen($resultfile . "/verdict");
+            //echo shell_exec ("/bin/docker run hor 2>&1");
+            //echo shell_exec ("/bin/bash " . getcwd() . "/junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile . " 2>&1");
 
-            $result = fread($resultfile);
-            fclose($resultfile);
+            shell_exec ("/bin/bash " . getcwd() . "/junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
+
+            //echo (getcwd() . '/' . $resultfile . "verdict");
+            $resultfilehandler = fopen(getcwd() . '/' . $resultfile . '/' . "verdict", "r");
+
+            $result = fread($resultfilehandler, filesize(getcwd() . '/' . $resultfile . '/' ."verdict"));
 
             if ($result == "0") {
-                echo "okay";
+                echo "Erfolgreich";
             } else {
+                echo "Fehlgeschlagen";
                 unlink($testfile);
             }
             

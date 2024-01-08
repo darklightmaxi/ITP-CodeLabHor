@@ -1,5 +1,7 @@
 #sudo bash junit-codelabs.sh test/submission.java test/test0.java test/
 
+whoami
+
 submission=$1
 test=$2
 result=$3
