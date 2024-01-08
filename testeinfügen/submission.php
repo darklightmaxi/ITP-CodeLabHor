@@ -68,12 +68,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
             $result = fread($resultfilehandler, filesize(getcwd() . '/' . $resultfile . '/' ."verdict"));
 
-            if ($result == "0") {
-                echo "Erfolgreich";
-            } else {
-                echo "Fehlgeschlagen";
-                unlink($testfile);
-            }
+            
             
         ?>
 
@@ -130,7 +125,17 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
         <div class="container">
             <div class="header">
-                <p> Test wurde Submitted </p>
+                <p> Test wurde Submitted: </p>
+                <p> 
+                <?php 
+                if ($result == "0") {
+                    echo "Erfolgreich :)";
+                } else {
+                    echo "Fehlgeschlagen :(";
+                    unlink($testfile);
+                } 
+                ?> 
+                </p>
             </div>
             <div class="testcase">
                 
