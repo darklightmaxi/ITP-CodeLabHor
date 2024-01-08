@@ -20,3 +20,4 @@ In diesem Repo findet sich die Website des ITP-Projekts CodeLabHor.
 10. Lehrer können Tests erstellen
 11. Lehrer können Musterlösungen ändern / erstellen
 12. Die Tests müssen ausführlich dokumentiert werden
+13. Datenbank muss aktuell in creates.sql und inserts.sql sein
