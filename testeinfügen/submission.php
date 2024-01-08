@@ -49,6 +49,21 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
             chdir("../../../");
             // echo getcwd();
 
+            $submissionfile = "../beispiele/" . $beispiel[0][1] . "/muster.txt";
+            $testfile = $file;
+            $resultfile = "temp";
+
+            shell_exec("bash junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
+
+            $resultfile = fopen($result);
+            $result = fread($result);
+            fclose($result);
+
+            if ($result == "0") {
+                echo "okay";
+            } else {
+                unlink($testfile);
+            }
         ?>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (integrity hash)" crossorigin="anonymous" />
