@@ -44,13 +44,12 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
             // In File schreiben
 
             $content = $_GET['sub'];
+
             $myfile = fopen($file, "w") or die("Unable to open file!");
             fwrite($myfile, $content);
             fclose($myfile);
 
             // Execute der Bash befehle
-
-            error_reporting(E_ALL);
 
             chdir("../../tests/");
 
@@ -60,13 +59,18 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
             $okay = 0;
             $notokay = 0;
+            $passed = [];
+            $notpassed = [];
 
             $files = array_slice(scandir("./"), 2);
 
             chdir("../../../testeinfügen/");
 
+            $count = 0;
+            $slice = array_slice(explode('/', $submissionfile), 6);
+
             foreach ($files as $testfile){
-                $slice = array_slice(explode('/', $submissionfile), 6);
+
                 $pre = array_slice(explode('/', getcwd()), 0, 5);
                 $prePath = implode('/', $pre) . "/beispiele";
 
@@ -75,19 +79,17 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
                 shell_exec("/bin/bash junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
 
-                //echo ("/bin/bash /junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
-                ///bin/bash /opt/lampp/htdocs/ITP/testeinfügen/junit-codelabs.sh /opt/lampp/htdocs/ITP/beispiele/isPalindrom/submissions/3/43.txt 1.txt temp
-
                 $resultfilehandler = fopen(getcwd() . '/' . $resultfile . '/' . "verdict", "r");
 
                 $result = fread($resultfilehandler, filesize(getcwd() . '/' . $resultfile . '/' ."verdict"));
 
                 if ($result == "0") {
+                    $passed[] = end(explode('/', explode('.', $testfile)[0]));
                     $okay++;
                 } else {
+                    $notpassed[] = end(explode('/', explode('.', $testfile)[0]));
                     $notokay++;
                 }
-                
             }
 
         ?>
@@ -148,6 +150,8 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                 <p> Submitted <br> 
                 <?php
                     echo "Erfolgreiche Tests: " . $okay . "   " . "<br>Nicht erfolgreiche Tests: " . $notokay;
+                    echo "<br><br> Indexes der erfolgreich absolvierte Tests: <br>" . implode(', ', $passed);
+                    echo "<br> Indexes der nicht erfolgreich absolvierte Tests: <br>" . implode(', ', $notpassed);
                 ?>
                 </p>
             </div>
