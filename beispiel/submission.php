@@ -2,7 +2,6 @@
 session_start();
 
 if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
-
 ?>
 <!-- AufgabenÜbersicht -->
 <!DOCTYPE html>
@@ -22,8 +21,10 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
             $directory = "../beispiele/" . $beispiel[0][1] . "/submissions/" . $_SESSION['personid'] . "/";
 
-            //mkdir($directory, true);
+            mkdir($directory, true);
+            //echo getcwd() . "<br>";
             chdir($directory);
+            //echo getcwd();
             
             $files = array_slice(scandir("./"), 2);
 
@@ -62,11 +63,20 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
             $files = array_slice(scandir("./"), 2);
 
+            chdir("../../../testeinfügen/");
+
             foreach ($files as $testfile){
+                $slice = array_slice(explode('/', $submissionfile), 6);
+                $pre = array_slice(explode('/', getcwd()), 0, 5);
+                $prePath = implode('/', $pre) . "/beispiele";
 
-                echo $testfile;
+                $submissionfile = "../beispiele/" . $slice[0] . "/" . $slice[1] . "/" . $slice[2] . "/" . $slice[3];  // isPalindrom/submissions/3/8.txt
+                $testfile = $prePath . "/" . $slice[0] . "/tests/" . $testfile;  // isPalindrom/tests/1.txt
 
-                shell_exec ("/bin/bash " . getcwd() . "/junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
+                shell_exec("/bin/bash junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
+
+                //echo ("/bin/bash /junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
+                ///bin/bash /opt/lampp/htdocs/ITP/testeinfügen/junit-codelabs.sh /opt/lampp/htdocs/ITP/beispiele/isPalindrom/submissions/3/43.txt 1.txt temp
 
                 $resultfilehandler = fopen(getcwd() . '/' . $resultfile . '/' . "verdict", "r");
 
@@ -77,9 +87,9 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                 } else {
                     $notokay++;
                 }
+                
             }
 
-            echo "okay: " . okay . "   " . "notokay: " . notokay;
         ?>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (integrity hash)" crossorigin="anonymous" />
@@ -135,7 +145,11 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
         <div class="container">
             <div class="header">
-                <p> Submission wurde Submitted </p>
+                <p> Submitted <br> 
+                <?php
+                    echo "Erfolgreiche Tests: " . $okay . "   " . "<br>Nicht erfolgreiche Tests: " . $notokay;
+                ?>
+                </p>
             </div>
             <div class="testcase">
                 
