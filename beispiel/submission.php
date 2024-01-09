@@ -20,7 +20,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
             // Auflistung der Files, gespliced weil ./ und ../ interessieren mich nicht
 
-            $directory = "../beispiele/". $beispiel[0][1] . "/tests/";
+            $directory = "../beispiele/". $beispiel[0][1] . "/submissions/" . $_SESSION['personid'] . "/";
             chdir($directory);
             
             $files = array_slice(scandir("./"), 2);
@@ -46,24 +46,32 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
             // Execute der Bash befehle
 
-            chdir("../../../");
-            // echo getcwd();
+            error_reporting(E_ALL);
 
-            $submissionfile = "../beispiele/" . $beispiel[0][1] . "/muster.txt";
-            $testfile = $file;
+            chdir("../../../testeinfügen/");
+
+            $submissionfile = $file;
+
             $resultfile = "temp";
 
-            shell_exec("bash junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
+            $okay = 0;
+            $notokay = 0;
 
-            $resultfile = fopen($result);
-            $result = fread($result);
-            fclose($result);
+            foreach ($files as $testfile){
+                shell_exec ("/bin/bash " . getcwd() . "/junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
 
-            if ($result == "0") {
-                echo "okay";
-            } else {
-                unlink($testfile);
+                $resultfilehandler = fopen(getcwd() . '/' . $resultfile . '/' . "verdict", "r");
+
+                $result = fread($resultfilehandler, filesize(getcwd() . '/' . $resultfile . '/' ."verdict"));
+
+                if ($result == "0") {
+                    $okay++;
+                } else {
+                    $notokay++;
+                }
             }
+
+            echo "okay: " . okay . "   " . "notokay: " . notokay;
         ?>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (integrity hash)" crossorigin="anonymous" />
@@ -109,12 +117,8 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                 <a href="../ranking">Ranking</a>
                 <a href="#">
                     <?php
-                        $sql = "SELECT email FROM Person WHERE email='9039@htl.rennweg.at';";
-                        $stmt = $pdo->prepare($sql);
-                        $stmt->execute();
-                        $result = $stmt->fetchAll();
-                        $value = current(current(array_slice($result, 0, 1)));
-                        echo $value;
+                        $h = $_SESSION['email'];
+                        echo $h;
                     ?>
                 </a>
                 <a href="../logout.php"><i class="fas fa-sign-out-alt"></i></a>
