@@ -104,21 +104,21 @@ public class Solution() {
                         <form id="submission" action="./submission.php">
                             <textarea name="sub" id="sub">
                                 <?php 
-                                    //echo htmlspecialchars($s); 
                                     echo htmlspecialchars($s);
                                 ?>
                             </textarea>
                             <input type="text" hidden=true value="<?php echo $id; ?>" name="beispiel">
-                        </form>
-                    </div>
-                    <div class="buttons">
+                            <div class="buttons">
                         <tr>
                             <td>
                                 <button id="ergebnisse">Ergebnisse</button>
                             </td>
                         </tr>
-                        <button id="run">Ausführen</button>
+                        <button id="run" type="submit">Ausführen</button>
                     </div>
+                        </form>
+                    </div>
+                    
                 </div>
             </div>
             <script src="./script.js"></script>
