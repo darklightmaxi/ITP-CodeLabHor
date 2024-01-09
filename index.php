@@ -55,9 +55,5 @@
             
             <button class="login" type="submit">Login</button>
         </form>
-
-        <form action="register.php" method="post">
-            <button class="register" type="submit">Register</button>
-        </form>
     </body>
 </html>
