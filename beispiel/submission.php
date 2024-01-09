@@ -20,8 +20,9 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
             // Auflistung der Files, gespliced weil ./ und ../ interessieren mich nicht
 
-            $directory = "../beispiele/". $beispiel[0][1] . "/submissions/" . $_SESSION['personid'] . "/";
-            mkdir($directory, true);
+            $directory = "../beispiele/" . $beispiel[0][1] . "/submissions/" . $_SESSION['personid'] . "/";
+
+            //mkdir($directory, true);
             chdir($directory);
             
             $files = array_slice(scandir("./"), 2);
@@ -29,13 +30,14 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
             // Höchste Nummer finden und 1 addieren für eindeutigen Namen
 
             //echo var_dump($files)[0];
+            //echo getcwd();
 
             $newFileNumber = 0;
             foreach ($files as $file){
                 $newFileNumber = max(explode('.', $file)[0], $newFileNumber);
             }
             $newFileNumber += 1;
-
+            
             $file = getcwd() . '/' . $newFileNumber . '.txt';
             
             // In File schreiben
@@ -49,7 +51,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
             error_reporting(E_ALL);
 
-            chdir("../../../testeinfügen/");
+            chdir("../../tests/");
 
             $submissionfile = $file;
 
@@ -58,7 +60,12 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
             $okay = 0;
             $notokay = 0;
 
+            $files = array_slice(scandir("./"), 2);
+
             foreach ($files as $testfile){
+
+                echo $testfile;
+
                 shell_exec ("/bin/bash " . getcwd() . "/junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
 
                 $resultfilehandler = fopen(getcwd() . '/' . $resultfile . '/' . "verdict", "r");
