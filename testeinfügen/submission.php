@@ -67,9 +67,6 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
             $resultfilehandler = fopen(getcwd() . '/' . $resultfile . '/' . "verdict", "r");
 
             $result = fread($resultfilehandler, filesize(getcwd() . '/' . $resultfile . '/' ."verdict"));
-
-            
-            
         ?>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (integrity hash)" crossorigin="anonymous" />
