@@ -21,6 +21,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
             // Auflistung der Files, gespliced weil ./ und ../ interessieren mich nicht
 
             $directory = "../beispiele/". $beispiel[0][1] . "/submissions/" . $_SESSION['personid'] . "/";
+            mkdir($directory, true);
             chdir($directory);
             
             $files = array_slice(scandir("./"), 2);
