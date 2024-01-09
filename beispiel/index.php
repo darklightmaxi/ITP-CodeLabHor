@@ -93,32 +93,39 @@ public class Solution() {
             </div>
             <div class="task">
                 <div class="input">
-                    <textarea id="input" readonly>
-                        <?php
-                            echo htmlspecialchars($input); 
-                        ?>
-                    </textarea>
-                </div>
-                <div class="code">
-                    <div class="editor">
-                        <form id="submission" action="./submission.php">
+                    <form id="submission" action="./submission.php">
+                        <textarea id="input" readonly>
+                            <?php
+                                echo htmlspecialchars($input); 
+                            ?>
+                        </textarea>
+                    </div>
+                    <div class="code">
+                        <div class="editor">
+                        
                             <textarea name="sub" id="sub">
                                 <?php 
                                     echo htmlspecialchars($s);
                                 ?>
                             </textarea>
                             <input type="text" hidden=true value="<?php echo $id; ?>" name="beispiel">
-                            <div class="buttons">
-                        <tr>
-                            <td>
-                                <button id="ergebnisse">Ergebnisse</button>
-                            </td>
-                        </tr>
-                        <button id="run" type="submit">Ausführen</button>
-                    </div>
-                        </form>
-                    </div>
-                    
+                        
+                        </div>
+                        <div class="buttons">
+                            <tr>
+                                <td>
+                                    <button id="scrollToTop">&#652;</button>
+                                </td>
+                                <td>
+                                    <button id="test">Testfälle</button>
+                                </td>
+                                <td>
+                                    <button id="ergebnisse">Ergebnisse</button>
+                                </td>
+                            </tr>
+                            <button id="run">Ausführen</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <script src="./script.js"></script>
