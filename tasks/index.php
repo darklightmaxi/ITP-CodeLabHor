@@ -82,12 +82,12 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                     echo "<td><a href='../testeinfügen/index.php?beispiel=" . $beispiel[0] . "'>Testcases einfügen</a></td>";
                     echo "<td><a href='../beispielranking'>Ranking</a></td>";
                     echo "<td><a href='../beispiel/index.php?beispiel=" . $beispiel[0] . "'> Anzeigen </a></td>";
-
-                    $sql = "SELECT spaltenname FROM IhreTabelle WHERE bedingung = 'IhrWert'";
+/*
+                    $sql = "SELECT rolle FROM Person WHERE email = " . $_SESSION['email'] . ";";
                     $stmt = $pdo->prepare($sql);
                     $stmt->execute();
                     $result = $stmt->fetchAll();
-                    
+                    */
                     echo "</tr>";
                 }
                 
