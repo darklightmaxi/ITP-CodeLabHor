@@ -47,9 +47,10 @@ nav a {
 .task {
     height: 30vw;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     margin: 0;
+    border: 1px solid green;
 }
 
 .code, .input {
@@ -64,6 +65,7 @@ nav a {
 .input {
     border: none;
     outline: none;
+    /*padding-right: 25%;*/
 }
 
 .code {
@@ -80,13 +82,14 @@ textarea {
     height: 100%;
     width: 100%;
     font-family: 'DM Sans';
-    resize: none;
+    /*resize: none;*/
     border: none;
     outline: none;
 }
 
 #sub {
     height: 23vw;
+    width: 100%;
     border: 1px solid grey;
 }
 

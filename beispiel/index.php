@@ -93,13 +93,14 @@ public class Solution() {
             </div>
             <div class="task">
                 <div class="input">
-                    <form id="submission" action="./submission.php">
-                        <textarea id="input" readonly>
-                            <?php
-                                echo htmlspecialchars($input); 
-                            ?>
-                        </textarea>
-                    </div>
+                    <textarea id="input" readonly>
+                        <?php
+                            echo htmlspecialchars($input); 
+                        ?>
+                    </textarea>
+                </div>
+                <form id="submission" action="./submission.php">
+                        
                     <div class="code">
                         <div class="editor">
                         

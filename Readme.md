@@ -8,20 +8,16 @@ In diesem Repo findet sich die Website des ITP-Projekts CodeLabHor.
 
 ## TODOs:
 
-WICHTIG
-3. Auch submit von Aufgaben zulassen
-9. Lehrer müssen Beispiele erstellen können
-16. Lehrer bekommen direkten Zugriff auf die Testordner
+MZ noch nicht erfüllt:
 
-HALB
-2. Result von Sandbox zurückliefern auf Website -
+MZ06
+Lehrer können Beispiele bearbeiten und hinzufügen. 
 
-WICHTIG TODO
-11. Lehrer können Musterlösungen ändern / erstellen
-13. Datenbank muss aktuell in creates.sql und inserts.sql sein
-14. Ranking von eingereichten Tests muss hinzugefügt werden
-15. Beispielranking
+MZ07 
+Lehrer können Tests bearbeiten und hinzufügen. - Nur bearbeiten fehlt
 
-EVENTUELL OPTIONAL
-4. Passwort Hashen //
-12. Die Tests müssen ausführlich dokumentiert werden
+MZ08 
+Lehrer können die Musterlösungen bearbeiten und hinzufügen. - Hinzufügen nur bei neu erstelltem Beispiel
+
+MZ11 
+Bei der Erstanmeldung als Schüler muss die eigene Klasse angegeben werden.  
