@@ -10,6 +10,29 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
     <head>
         <?php
             include('../database_conn.php');
+            $id = $_GET['beispiel'];
+            //echo var_dump($_GET['sub']);
+
+            // SQL-Abfrage ausführen
+            $sql = "SELECT * FROM Beispiel where beispielid=$id";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+
+            $filePath = '../beispiele/' . $result[0][1] . '/aufgabe.txt';
+            if (file_exists($filePath)) {
+                $input = file_get_contents($filePath);
+            }
+            else {
+                $input = 'Datei nicht gefunden';
+            }
+
+            $s = '
+public class Solution() {
+    public static void main(String[] args) {
+        
+    }
+}';
         ?>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (integrity hash)" crossorigin="anonymous" />
 
@@ -50,7 +73,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
         <nav>
             <a href="../homepage"><span id="CodeLabHor"><span id="bold">CodeLab</span>Hor</span></a>
             <nav id="rightnav">
-                <a href="#">Aufgabenübersicht</a>
+                <a href="../tasks">Aufgabenübersicht</a>
                 <a href="../ranking">Ranking</a>
                 <a href="#">
                     <?php
@@ -63,46 +86,38 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
         </nav>
 
         <div class="container">
-            <?php
-        
-                $sql = "SELECT rolle FROM Person WHERE email = '$h'";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute();
-                $rolle = $stmt->fetch()['rolle'];
-        
-                // SQL-Abfrage ausführen
-                $sql = "SELECT * FROM Beispiel";
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute();
-                $result = $stmt->fetchAll();
-
-                
-                
-                echo "<table>";
-                echo "<th>";
-                echo "<h2>Aufgabenübersicht</h2>";
-                echo "</th>";
-                
-                foreach($result as $beispiel){
-                    echo "<tr>";
-                    echo "<td><a href='../beispiel/index.php?beispiel=" . $beispiel[0] . "' class='link'> Aufgabe " . $beispiel[0] . ": " . $beispiel[1] . "</a></td>";
-                    echo "<td><a href='../testeinfügen/index.php?beispiel=" . $beispiel[0] . "'>Testcases einfügen</a></td>";
-                    echo "<td><a href='../beispielranking'>Ranking</a></td>";
-                    echo "<td><a href='../beispiel/index.php?beispiel=" . $beispiel[0] . "'> Anzeigen </a></td>"; 
-                    if($rolle == "L"){
-                        echo "<td><a href='../beispielbearbeiten/index.php?beispiel=" . $beispiel[0] . "'>Bearbeiten</a></td>";
-                    }                   
-                    echo "</tr>";
-                }
-                
-                echo "</table>";
-                
-            ?>
+            <div class="header">
+                <?php
+                    echo "<p>Bearbeiten der Aufgabe " . $result[0][0] . ": " . $result[0][1] . "</p>";
+                ?>
+            </div>
+            <div class="content">
+                <div class='left'>
+                    <form action="changetask.php" method="POST">
+                        <textarea id="input" name="input" spellcheck="false">
+                            <?php
+                                echo htmlspecialchars($input);
+                            ?>
+                        </textarea>
+                        <input type="hidden" name="beispiel" value="<?php echo $id; ?>">
+                        <button id="run">Ändern</button>
+                    </form>
+                </div>
+                <div class='right'>
+                    <form action="changepre.php" method="POST">
+                        <textarea id="input" name="input" spellcheck="false">
+                            <?php
+                                echo htmlspecialchars($s);
+                            ?>
+                        </textarea>
+                        <button id="run">Ändern</button>
+                    </form>
+                </div>
+            </div>
         </div>
         
     </body>
-</html>
-<?php
+</html><?php
 }else{
     header("Location: ../index.php");
 }
