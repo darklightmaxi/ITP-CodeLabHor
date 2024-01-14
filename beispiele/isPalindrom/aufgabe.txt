@@ -3,4 +3,4 @@ Ein Palindrom ist eine Folge von Zeichen, die sich rückwärts wie vorwärts les
 
 ##Aufgabenstellung:
 Schreibe eine Java-Methode, die überprüft, ob der eingegebene String „s“ ein Palindrom ist und liefert einen boolischen Wert („true“ oder „false“). Dabei soll die Groß-/Kleinschreibung und die Leerzeichen ignoriert werden.
- -> public static boolean isPalindrom(String s)
+ -> public static boolean isPalindrom(String s)                        

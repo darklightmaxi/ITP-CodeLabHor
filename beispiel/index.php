@@ -91,41 +91,23 @@ public class Solution() {
                     echo "<p>Aufgabe " . $result[0][0] . ": " . $result[0][1] . "</p>";
                 ?>
             </div>
-            <div class="task">
-                <div class="input">
-                    <textarea id="input" readonly>
-                        <?php
+            <div class="content">
+                <div class="left">
+                    <form>
+                        <textarea id="input" name="input" readonly><?php
                             echo htmlspecialchars($input); 
-                        ?>
-                    </textarea>
+                            ?>
+                        </textarea>
+                    </form>
                 </div>
-                <form id="submission" action="./submission.php">
-                        
-                    <div class="code">
-                        <div class="editor">
-                        
-                            <textarea name="sub" id="sub">
-                                <?php 
-                                    echo htmlspecialchars($s);
-                                ?>
-                            </textarea>
-                            <input type="text" hidden=true value="<?php echo $id; ?>" name="beispiel">
-                        
-                        </div>
-                        <div class="buttons">
-                            <tr>
-                                <td>
-                                    <button id="scrollToTop">&#652;</button>
-                                </td>
-                                <td>
-                                    <button id="test">Testfälle</button>
-                                </td>
-                                <td>
-                                    <button id="ergebnisse">Ergebnisse</button>
-                                </td>
-                            </tr>
-                            <button id="run">Ausführen</button>
-                        </div>
+                <div class="right">
+                    <form id="submission" action="./submission.php">
+                        <textarea name="sub" id="sub" spellcheck="false"><?php 
+                            echo htmlspecialchars($s);
+                            ?>
+                        </textarea>
+                        <input type="text" hidden=true value="<?php echo $id; ?>" name="beispiel">
+                        <button id="run">Ausführen</button>
                     </form>
                 </div>
             </div>

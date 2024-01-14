@@ -94,7 +94,9 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                     }                   
                     echo "</tr>";
                 }
-                
+                if ($rolle == "L"){
+                    echo "<tr> <td><a href='../beispieleinfügen/index.php'>Aufgabe hinzufügen</a></td> </tr>";
+                }
                 echo "</table>";
                 
             ?>

@@ -10,9 +10,6 @@ In diesem Repo findet sich die Website des ITP-Projekts CodeLabHor.
 
 MZ noch nicht erfüllt:
 
-MZ06
-Lehrer können Beispiele bearbeiten und hinzufügen.   0.5
-
 MZ07 
 Lehrer können Tests bearbeiten und hinzufügen. - Nur bearbeiten fehlt
 

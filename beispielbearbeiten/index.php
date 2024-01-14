@@ -94,9 +94,8 @@ public class Solution() {
             <div class="content">
                 <div class='left'>
                     <form action="changetask.php" method="POST">
-                        <textarea id="input" name="input" spellcheck="false">
-                            <?php
-                                echo htmlspecialchars($input);
+                        <textarea id="input" name="input" spellcheck="false"><?php
+                            echo htmlspecialchars($input);
                             ?>
                         </textarea>
                         <input type="hidden" name="beispiel" value="<?php echo $id; ?>">
@@ -105,8 +104,7 @@ public class Solution() {
                 </div>
                 <div class='right'>
                     <form action="changepre.php" method="POST">
-                        <textarea id="input" name="input" spellcheck="false">
-                            <?php
+                        <textarea id="input" name="input" spellcheck="false"><?php
                                 echo htmlspecialchars($s);
                             ?>
                         </textarea>
