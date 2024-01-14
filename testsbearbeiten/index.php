@@ -10,6 +10,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
     <head>
         <?php
             include('../database_conn.php');
+            
             $id = $_GET['beispiel'];
             //echo var_dump($_GET['sub']);
 
@@ -18,22 +19,8 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $result = $stmt->fetchAll();
-
-            $filePath = '../beispiele/' . $result[0][1] . '/aufgabe.txt';
-            if (file_exists($filePath)) {
-                $input = file_get_contents($filePath);
-            }
-            else {
-                $input = 'Datei nicht gefunden';
-            }
-
-            $filePath = '../beispiele/' . $result[0][1] . '/muster.txt';
-            if (file_exists($filePath)) {
-                $input2 = file_get_contents($filePath);
-            }
-            else {
-                $input2 = 'Datei nicht gefunden';
-            }
+            $filePath = '../beispiele/' . $result[0][1] . '/tests/';
+            $files = array_slice(scandir($filePath), 2);
         ?>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (integrity hash)" crossorigin="anonymous" />
 
@@ -89,35 +76,14 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
         <div class="container">
             <div class="header">
                 <?php
-                    echo "<p>Bearbeiten der Aufgabe " . $result[0][0] . ": " . $result[0][1];
+                    echo "<p>Bearbeiten der Tests zu Aufgabe " . $result[0][0] . ": " . $result[0][1] . "</p>";
                 ?>
             </div>
             <div class="content">
-                <div class='left'>
-                    <p>Aufgabenstellung</p>
-                    <form action="changetask.php" method="POST">
-                        <textarea id="input" name="input" spellcheck="false"><?php
-                            echo htmlspecialchars($input);
-                            ?>
-                        </textarea>
-                        <input type="hidden" name="beispiel" value="<?php echo $id; ?>">
-                        <button id="run">Ändern</button>
-                    </form>
-                </div>
-                <div class='right'>
-                    <p>Musterlösung</p>
-                    <form action="changemuster.php" method="POST">
-                        <textarea id="input" name="input" spellcheck="false"><?php
-                                echo htmlspecialchars($input2);
-                            ?>
-                        </textarea>
-                        <input type="hidden" name="beispiel" value="<?php echo $id; ?>">
-                        <button id="run">Ändern</button>
-                    </form>
-                </div>
+
             </div>
         </div>
-        <a href="../testsbearbeiten/index.php?beispiel=<?php echo $id; ?>"><input type="hidden" name="beispiel" value="<?php echo $id; ?>"><button id="run">Tests Bearbeiten</button></a>
+        
     </body>
 </html><?php
 }else{
