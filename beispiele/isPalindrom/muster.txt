@@ -1,5 +1,5 @@
 public class submission {
-public static boolean isPalindrom(String s){
+  public static boolean isPalindrom(String s){
     s = s.toLowerCase().replace(" ", "");
     int links = 0;
     int rechts = s.length() - 1;
@@ -12,5 +12,5 @@ public static boolean isPalindrom(String s){
         rechts--;
     }
     return true;
-}
+  }
 }

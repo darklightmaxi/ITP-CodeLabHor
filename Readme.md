@@ -12,6 +12,3 @@ MZ noch nicht erfüllt:
 
 MZ07 
 Lehrer können Tests bearbeiten und hinzufügen. - Nur bearbeiten fehlt
-
-MZ08 
-Lehrer können die Musterlösungen bearbeiten und hinzufügen. - Hinzufügen nur bei neu erstelltem Beispiel

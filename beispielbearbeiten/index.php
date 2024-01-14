@@ -27,12 +27,13 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                 $input = 'Datei nicht gefunden';
             }
 
-            $s = '
-public class Solution() {
-    public static void main(String[] args) {
-        
-    }
-}';
+            $filePath = '../beispiele/' . $result[0][1] . '/muster.txt';
+            if (file_exists($filePath)) {
+                $input2 = file_get_contents($filePath);
+            }
+            else {
+                $input2 = 'Datei nicht gefunden';
+            }
         ?>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (integrity hash)" crossorigin="anonymous" />
 
@@ -103,11 +104,12 @@ public class Solution() {
                     </form>
                 </div>
                 <div class='right'>
-                    <form action="changepre.php" method="POST">
+                    <form action="changemuster.php" method="POST">
                         <textarea id="input" name="input" spellcheck="false"><?php
-                                echo htmlspecialchars($s);
+                                echo htmlspecialchars($input2);
                             ?>
                         </textarea>
+                        <input type="hidden" name="beispiel" value="<?php echo $id; ?>">
                         <button id="run">Ändern</button>
                     </form>
                 </div>
