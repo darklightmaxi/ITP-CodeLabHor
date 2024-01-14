@@ -2,15 +2,6 @@
 session_start();
 include "db_connection.php";
 
-/*$sql = "SELECT * FROM Person WHERE email='$uname';";
-$result = mysqli_query($conn, $sql);
-var_dump($result);
-
-if (!isset($_POST['uname']) || ) {
-    header("Location: register.php");
-    exit();
-}*/
-
 if (isset($_POST['uname']) && isset($_POST['password'])) {
 
     function validate($data){
@@ -30,7 +21,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
         header("Location: index.php?error=Password is required");
         exit();
     }else{
-        $sql = "SELECT * FROM Person WHERE email='$uname' AND password='$pass'";
+        $sql = "SELECT * from Person WHERE email='$uname' AND password='$pass'";
 
         $result = mysqli_query($conn, $sql);
 
@@ -40,6 +31,11 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
             if ($row['email'] === $uname && $row['password'] === $pass) {
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['personid'] = $row['personid'];
+
+                if ($row['fk_klasse'] === NULL && $row['rolle'] === 'S'){
+                    header("Location: selectclass.php");
+                    exit();
+                }
                 header("Location: homepage\index.php");
                 exit();
             }else{
