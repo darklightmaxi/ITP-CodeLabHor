@@ -18,6 +18,3 @@ Lehrer können Tests bearbeiten und hinzufügen. - Nur bearbeiten fehlt
 
 MZ08 
 Lehrer können die Musterlösungen bearbeiten und hinzufügen. - Hinzufügen nur bei neu erstelltem Beispiel
-
-MZ11 
-Bei der Erstanmeldung als Schüler muss die eigene Klasse angegeben werden.  
