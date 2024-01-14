@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         chdir("$taskname");
         shell_exec("echo '$taskdescription' > 'aufgabe.txt'");
         shell_exec("echo '$taskcode' > 'muster.txt'");
+        header("Location: ../tasks");
     }
 }
 ?>
