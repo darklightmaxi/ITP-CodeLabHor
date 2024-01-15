@@ -94,7 +94,7 @@ public class Solution() {
             <div class="content">
                 <div class="left">
                     <form>
-                        <textarea id="input" name="input" readonly><?php
+                        <textarea id="input" name="input" readonly=true><?php
                             echo htmlspecialchars($input); 
                             ?>
                         </textarea>
