@@ -10,18 +10,18 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
     <head>
         <?php
             include('../database_conn.php');
-            
-            $id = $_GET['beispiel'];
-            //echo var_dump($_GET['sub']);
+            $id = $_GET['id'];
+            $test = $_GET['file'];
 
-            // SQL-Abfrage ausführen
             $sql = "SELECT * FROM Beispiel where beispielid=$id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $result = $stmt->fetchAll();
-            $filePath = '../beispiele/' . $result[0][1] . '/tests/';
-            $files = array_slice(scandir($filePath), 2);
+
+            chdir('../beispiele/'. $result[0][1] . '/tests/');
+            $s = file_get_contents($test);
         ?>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (integrity hash)" crossorigin="anonymous" />
 
         <!-- Titel der Website -->
@@ -76,16 +76,33 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
         <div class="container">
             <div class="header">
                 <?php
-                    echo "<p>Bearbeiten der Tests zu Aufgabe " . $result[0][0] . ": " . $result[0][1] . "</p>";
+                    // SQL-Abfrage ausführen
+                    $sql = "SELECT * FROM Beispiel where beispielid=$id";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute();
+                    $result = $stmt->fetchAll();
+                    echo "<p>Testcase bearbeiten - Aufgabe " . $result[0][0] . ": " . $result[0][1] . ", Testcase " . explode('.',$test)[0] . "</p>";
                 ?>
             </div>
-            <div class="content">
-
+            <div class="right">
+                <form id="submission" action="./submission.php">
+                    <textarea name="change"><?php
+                        echo $s;
+                    ?></textarea>
+                    <input type="text" hidden=true value="<?php echo $result[0][1]; ?>" name="beispiel">
+                    <input type="text" hidden=true value="<?php echo $id; ?>" name="beispielid">
+                    <input type="text" hidden=true value="<?php echo $test; ?>" name="test">
+                    <br>
+                    <input type="submit" value="Ändern" id="button">
+                    <br>
+                </form>
             </div>
+            <script src="./script.js"></script>
         </div>
         
     </body>
-</html><?php
+</html>
+<?php
 }else{
     header("Location: ../index.php");
 }
