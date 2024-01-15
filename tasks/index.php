@@ -51,7 +51,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
             <a href="../homepage"><span id="CodeLabHor"><span id="bold">CodeLab</span>Hor</span></a>
             <nav id="rightnav">
                 <a href="#">Aufgabenübersicht</a>
-                <a href="../ranking">Ranking</a>
+                <!--<a href="../ranking">Ranking</a>-->
                 <a href="#">
                     <?php
                         $h = $_SESSION['email'];
@@ -87,7 +87,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                     echo "<tr>";
                     echo "<td><a href='../beispiel/index.php?beispiel=" . $beispiel[0] . "' class='link'> Aufgabe " . $beispiel[0] . ": " . $beispiel[1] . "</a></td>";
                     echo "<td><a href='../testeinfügen/index.php?beispiel=" . $beispiel[0] . "'>Testcases einfügen</a></td>";
-                    echo "<td><a href='../beispielranking'>Ranking</a></td>";
+                    //echo "<td><a href='../beispielranking'>Ranking</a></td>";
                     echo "<td><a href='../beispiel/index.php?beispiel=" . $beispiel[0] . "'> Anzeigen </a></td>"; 
                     if($rolle == "L"){
                         echo "<td><a href='../beispielbearbeiten/index.php?beispiel=" . $beispiel[0] . "'>Bearbeiten</a></td>";

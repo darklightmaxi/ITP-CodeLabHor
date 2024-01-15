@@ -134,7 +134,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
             <a href="../homepage"><span id="CodeLabHor"><span id="bold">CodeLab</span>Hor</span></a>
             <nav id="rightnav">
                 <a href="../tasks">Aufgabenübersicht</a>
-                <a href="../ranking">Ranking</a>
+                <!--<a href="../ranking">Ranking</a>-->
                 <a href="#">
                     <?php
                         $h = $_SESSION['email'];

@@ -64,7 +64,7 @@ public class test {
             <a href="../homepage"><span id="CodeLabHor"><span id="bold">CodeLab</span>Hor</span></a>
             <nav id="rightnav">
                 <a href="../tasks">Aufgabenübersicht</a>
-                <a href="../ranking">Ranking</a>
+                <!--<a href="../ranking">Ranking</a>-->
                 <a href="#">
                     <?php
                         $h = $_SESSION['email'];
@@ -90,7 +90,9 @@ public class test {
                 <form id="submission" action="./submission.php">
                     <textarea name="sub"><?php echo htmlspecialchars($s); ?></textarea>
                     <input type="text" hidden=true value="<?php echo $id; ?>" name="beispiel">
-                    <input type="submit">
+                    <br>
+                    <input type="submit" value="Einreichen" id="button">
+                    <br>
                 </form>
             </div>
             <script src="./script.js"></script>

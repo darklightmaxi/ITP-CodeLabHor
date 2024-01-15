@@ -52,7 +52,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
             <a href="#"><span id="CodeLabHor"><span id="bold">CodeLab</span>Hor</span></a>
             <nav id="rightnav">
                 <a href="../tasks">Aufgabenübersicht</a>
-                <a href="../ranking">Ranking</a>
+                <!--<a href="../ranking">Ranking</a>-->
                 <a href="#">
                     <?php
                         $h = $_SESSION['email'];
@@ -64,19 +64,22 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
         </nav> 
         <div class="container">
             <div class="left-div">
-                <h2>Aufgabenübersicht</h2>
+                <h2 style="font-size: 50px">Aufgabenübersicht</h2>
                 <p>In dieser Übersicht erwarten dich vielfältige Aufgaben, die deine Fähigkeiten in Coding, Schreiben und kreativem Denken herausfordern und erweitern werden.</p>
+                <br>
+
                 <a href="../tasks">
                     <button class="blue-button">Los Geht's</button>
                 </a>
             </div>
+            <!--
             <div class="right-div">
                 <h2>Rankings</h2>
                 <p>In dieser Übersicht siehst du ein Ranking über die Schüler mit am meisten eingereichten Tests.</p>
                 <a href="../ranking">
                     <button class="blue-button">Anzeigen</button>
                 </a>
-            </div>
+            </div>-->
         </div>
     </body>
 </html>

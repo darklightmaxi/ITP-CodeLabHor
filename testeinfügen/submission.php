@@ -109,7 +109,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
             <a href="../homepage"><span id="CodeLabHor"><span id="bold">CodeLab</span>Hor</span></a>
             <nav id="rightnav">
                 <a href="../tasks">Aufgabenübersicht</a>
-                <a href="../ranking">Ranking</a>
+                <!--<a href="../ranking">Ranking</a>-->
                 <a href="#">
                     <?php
                         $h = $_SESSION['email'];
@@ -121,18 +121,15 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
         </nav>
 
         <div class="container">
-            <div class="header">
-                <p> Test wurde Submitted: </p>
-                <p> 
-                <?php 
+            <div class="header1">
+                <?php
                 if ($result == "0") {
-                    echo "Erfolgreich :)";
+                    echo "Test wurde Submitted: Erfolgreich!";
                 } else {
-                    echo "Fehlgeschlagen :(";
+                    echo "Test wurde Submitted: Fehlgeschlagen";
                     unlink($testfile);
-                } 
-                ?> 
-                </p>
+                }
+                ?>
             </div>
             <div class="testcase">
                 

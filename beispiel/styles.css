@@ -87,21 +87,25 @@ textarea {
 }
 
 #run {
-    background-color: #0D80D9;
+    background: #0D80D9;
+    padding: 10px 15px;
     color: #fff;
+    border-radius: 5px;
+    margin-right: 10px;
     margin-top: 10px;
-    width: 20%;
-    padding-top: 2%;
-    padding-right: 4%;
-    padding-bottom: 2%;
-    padding-left: 4%;
-    border-radius: 5%;
+    width: 100%;
+    border: none;
+    font-family: "DM Sans", sans-serif;
 }
 
-#run:hover {
+#run:hover{
     cursor: pointer;
+    opacity: .7;
 }
 
+#input{
+    font-family: "DM Sans", sans-serif;
+}
 /*
 textarea {
     background-color: #2C2C2C;
@@ -120,3 +124,23 @@ textarea {
     height: 100%;
     width: 100%;
 }*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

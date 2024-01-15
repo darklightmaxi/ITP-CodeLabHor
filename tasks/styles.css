@@ -68,6 +68,7 @@ th {
 
 td a {
     color: #0D80D9;
+    transition: .3s;
 }
 
 td a:hover {

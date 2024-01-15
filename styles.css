@@ -1,7 +1,7 @@
 body {
-    margin: 0px;
+    margin: 0;
     background-color: #2C2C2C;
-    font-family: 'DM Sans'; /* Font Family auf DM Sans ändern ( ist ein Font von Google, deswegen im Head die inkludierung nötig */
+    font-family: 'DM Sans', sans-serif; /* Font Family auf DM Sans ändern ( ist ein Font von Google, deswegen im Head die inkludierung nötig */
     overflow: hidden;       /* Scrollen verhindern */
     display: flex;
     justify-content: center;
