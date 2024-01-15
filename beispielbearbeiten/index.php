@@ -38,7 +38,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (integrity hash)" crossorigin="anonymous" />
 
         <!-- Titel der Website -->
-        <title>CodeLabHor - Die innovative Lernplattform</title>
+        <title>CODELABHOR - Die innovative Lernplattform</title>
 
         <!-- Dass alle Zeichen richtig dargestellt werden -->
         <meta charset="UTF-8">
@@ -72,7 +72,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
     <body>
 
         <nav>
-            <a href="../homepage"><span id="CodeLabHor"><span id="bold">CodeLab</span>Hor</span></a>
+            <a href="../homepage"><span id="CodeLabHor"><span id="bold">CODELAB</span>HOR</span></a>
             <nav id="rightnav">
                 <a href="../tasks">Aufgabenübersicht</a>
                 <!--<a href="../ranking">Ranking</a>-->

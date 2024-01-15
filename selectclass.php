@@ -11,7 +11,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
         <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 
         <!-- Titel der Website -->
-        <title>CodeLabHor - Die innovative Lernplattform</title>
+        <title>CODELABHOR - Die innovative Lernplattform</title>
 
         <!-- Dass alle Zeichen richtig dargestellt werden -->
         <meta charset="UTF-8">
@@ -45,7 +45,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
     <body>
         
         <form action="updateclass.php" method="POST">
-            <h1>CodeLabHor</h1>
+            <h1>CODELABHOR</h1>
 
             <h2>
                 <?php

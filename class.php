@@ -30,7 +30,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['personid'])) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 
         <!-- Title of the Website -->
-        <title>CodeLabHor - Die innovative Lernplattform</title>
+        <title>CODELABHOR - Die innovative Lernplattform</title>
 
         <!-- Charset for correct character rendering -->
         <meta charset="UTF-8">
@@ -63,7 +63,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['personid'])) {
     </head>
     <body>
     <form action="class.php" method="post">
-        <h1>CodeLabHor</h1>
+        <h1>CODELABHOR</h1>
         <?php
             if($error){
                 echo "Klasse konnte nicht eingetragen werden. Bitte nochmal probieren";
