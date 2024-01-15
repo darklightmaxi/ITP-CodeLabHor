@@ -64,7 +64,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
         </nav> 
         <div class="container">
             <div class="left-div">
-                <h2 style="font-size: 50px">Aufgabenübersicht</h2>
+                <h2 style="font-size: 50px">Die innovative Lernplattform</h2>
                 <p>In dieser Übersicht erwarten dich vielfältige Aufgaben, die deine Fähigkeiten in Coding, Schreiben und kreativem Denken herausfordern und erweitern werden.</p>
                 <br>
 
@@ -81,6 +81,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                 </a>
             </div>-->
         </div>
+
     </body>
 </html>
     <?php

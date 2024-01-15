@@ -95,12 +95,17 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                     echo "</tr>";
                 }
                 if ($rolle == "L"){
-                    echo "<tr> <td><a href='../beispieleinfügen/index.php'>Aufgabe hinzufügen</a></td> </tr>";
+                    echo "<tr> <td><a id='einfuegen_b' href='../beispieleinfügen/index.php'>Aufgabe hinzufügen</a></td> </tr>";
                 }
                 echo "</table>";
                 
             ?>
         </div>
+        <style>
+            #einfuegen_b{
+                color: #8A8A8A;
+            }
+        </style>
         
     </body>
 </html>

@@ -72,10 +72,13 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                 <form action="addtask.php" method="POST">
                     <label for="taskname">Aufgabenname</label>
                     <textarea id="taskname" name="taskname" placeholder="Aufgabenname" required></textarea>
+                    <br>
                     <label for="taskdescription">Aufgabenbeschreibung</label>
                     <textarea id="taskdescription" name="taskdescription" placeholder="Aufgabenbeschreibung" required></textarea>
+                    <br>
                     <label for="taskcode">Musterlösung</label>
                     <textarea id="taskcode" name="taskcode" placeholder="Musterlösung" required></textarea>
+                    <br>
                     <button id="run">Hinzufügen</button>
                 </form>
             </div>

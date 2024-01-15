@@ -96,7 +96,7 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                 <div class='left'>
                     <p>Aufgabenstellung</p>
                     <form action="changetask.php" method="POST">
-                        <textarea id="input" name="input" spellcheck="false"><?php
+                        <textarea style="font-family: 'DM Sans', sans-serif" id="input" name="input" spellcheck="false"><?php
                             echo htmlspecialchars($input);
                             ?>
                         </textarea>
@@ -117,7 +117,9 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                 </div>
             </div>
         </div>
-        <a href="../testsbearbeiten/index.php?beispiel=<?php echo $id; ?>"><input type="hidden" name="beispiel" value="<?php echo $id; ?>"><button id="run">Tests Bearbeiten</button></a>
+        <div style="width: 100%; text-align: center">
+            <a href="../testsbearbeiten/index.php?beispiel=<?php echo $id; ?>"><input type="hidden" name="beispiel" value="<?php echo $id; ?>"><button style="background: #385673; width: 90%" id="run">Tests Bearbeiten</button></a>
+        </div>
     </body>
 </html><?php
 }else{
