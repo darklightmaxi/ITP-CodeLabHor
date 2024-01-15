@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
         $beispiel = $stmt->fetch()[0];
         chdir("../beispiele/" . $beispiel);
-        shell_exec("echo '$text' > 'aufgabe.txt'");
+        shell_exec("echo '" . $text . "' > aufgabe.txt");
         header("Location: index.php?beispiel=$beispielid");
     } else {
         echo "Etwas ist schief gelaufen";

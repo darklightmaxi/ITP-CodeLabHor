@@ -8,9 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $test = $_GET['test'];
         $change = $_GET['change'];
         chdir('../beispiele/' . $id . '/tests/');
-        shell_exec('echo "' . $change . '" > ' . $test);
+        shell_exec('echo "' . $change . '" > ./' . $test);
         header("Location: ../testsbearbeiten/index.php?beispiel=$beispielid");
-
     } else {
         echo "Etwas ist schief gelaufen";
     }

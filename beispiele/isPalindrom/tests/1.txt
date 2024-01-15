@@ -5,9 +5,10 @@ import static org.junit.Assert.assertTrue;
 public class test{
     @Test
     public void Palindrom_Mit_Palindrom() {
-        assertTrue(submission.isPalindrom("racecar"));
-        assertTrue(submission.isPalindrom("A man a plan a canal Panama"));
-        assertTrue(submission.isPalindrom("A Santa lived as a devil at NASA"));
-        assertTrue(submission.isPalindrom("No lemon, no melon"));
+        assertTrue(submission.isPalindrom(racecar));
+        assertTrue(submission.isPalindrom(A man a plan a canal Panama));
+        assertTrue(submission.isPalindrom(A Santa lived as a devil at NASA));
+        assertTrue(submission.isPalindrom(No lemon, no melon));
     }
 }
+

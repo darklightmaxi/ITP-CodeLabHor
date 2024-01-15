@@ -6,3 +6,5 @@ Schreibe eine Java-Methode, die überprüft, ob der eingegebene String „s“ e
  -> public static boolean isPalindrom(String s)                        
                         
                         
+                        
+                        

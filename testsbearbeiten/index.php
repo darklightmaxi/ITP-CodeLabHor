@@ -10,22 +10,22 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
     <head>
         <?php
             include('../database_conn.php');
-            $id = $_GET['id'];
-            $test = $_GET['file'];
+            
+            $id = $_GET['beispiel'];
+            //echo var_dump($_GET['sub']);
 
+            // SQL-Abfrage ausführen
             $sql = "SELECT * FROM Beispiel where beispielid=$id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $result = $stmt->fetchAll();
-
-            chdir('../beispiele/'. $result[0][1] . '/tests/');
-            $s = file_get_contents($test);
+            $filePath = '../beispiele/' . $result[0][1] . '/tests/';
+            $files = array_slice(scandir($filePath), 2);
         ?>
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (integrity hash)" crossorigin="anonymous" />
 
         <!-- Titel der Website -->
-        <title>CODELABHOR - Die innovative Lernplattform</title>
+        <title>CodeLabHor - Die innovative Lernplattform</title>
 
         <!-- Dass alle Zeichen richtig dargestellt werden -->
         <meta charset="UTF-8">
@@ -59,10 +59,10 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
     <body>
 
         <nav>
-            <a href="../homepage"><span id="CodeLabHor"><span id="bold">CODELAB</span>HOR</span></a>
+            <a href="../homepage"><span id="CodeLabHor"><span id="bold">CodeLab</span>Hor</span></a>
             <nav id="rightnav">
                 <a href="../tasks">Aufgabenübersicht</a>
-                <!--<a href="../ranking">Ranking</a>-->
+                <a href="../ranking">Ranking</a>
                 <a href="#">
                     <?php
                         $h = $_SESSION['email'];
@@ -76,33 +76,25 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
         <div class="container">
             <div class="header">
                 <?php
-                    // SQL-Abfrage ausführen
-                    $sql = "SELECT * FROM Beispiel where beispielid=$id";
-                    $stmt = $pdo->prepare($sql);
-                    $stmt->execute();
-                    $result = $stmt->fetchAll();
-                    echo "<p>Testcase bearbeiten - Aufgabe " . $result[0][0] . ": " . $result[0][1] . ", Testcase " . explode('.',$test)[0] . "</p>";
+                    echo "<p>Bearbeiten der Tests zu Aufgabe " . $result[0][0] . ": " . $result[0][1] . "</p>";
+                    chdir('../beispiele/' . $result[0][1] . '/tests/');
+                    $files = array_slice(scandir('.'), 2);
+                    echo "<table>";
+                    foreach ($files as $file) {
+                        echo "<tr>";
+                        echo "<td><a href='viewtest.php?id=" . $id . "&file=" . $file . "'>" . $file . "</a></td>";
+                        echo "</tr>";
+                    }
+                    echo "</table>";
                 ?>
             </div>
-            <div class="right">
-                <form id="submission" action="./submission.php">
-                    <textarea name="change"><?php
-                        echo $s;
-                    ?></textarea>
-                    <input type="text" hidden=true value="<?php echo $result[0][1]; ?>" name="beispiel">
-                    <input type="text" hidden=true value="<?php echo $id; ?>" name="beispielid">
-                    <input type="text" hidden=true value="<?php echo $test; ?>" name="test">
-                    <br>
-                    <input type="submit" value="Ändern" id="button">
-                    <br>
-                </form>
+            <div class="content">
+
             </div>
-            <script src="./script.js"></script>
         </div>
         
     </body>
-</html>
-<?php
+</html><?php
 }else{
     header("Location: ../index.php");
 }
