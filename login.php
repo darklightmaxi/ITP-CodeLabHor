@@ -38,19 +38,10 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
             $row = mysqli_fetch_assoc($result);
 
             if ($row['email'] === $uname && $row['password'] === $pass) {
-
-
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['personid'] = $row['personid'];
-                // Weiterleitung: Klasse bereits eingetragen/nicht eingetragen
-                if($row['fk_klasse'] === null){
-                    header("Location: class.php");
-                }else{
-                    header("Location: homepage\index.php");
-                }
+                header("Location: homepage\index.php");
                 exit();
-
-
             }else{
                 header("Location: index.php?error=Incorrect E-Mail or password");
                 exit();

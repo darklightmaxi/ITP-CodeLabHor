@@ -2,7 +2,6 @@
 session_start();
 
 if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
-
 ?>
 <!-- AufgabenÜbersicht -->
 <!DOCTYPE html>
@@ -20,50 +19,79 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
             // Auflistung der Files, gespliced weil ./ und ../ interessieren mich nicht
 
-            $directory = "../beispiele/". $beispiel[0][1] . "/tests/";
+            $directory = "../beispiele/" . $beispiel[0][1] . "/submissions/" . $_SESSION['personid'] . "/";
+
+            mkdir($directory, true);
+            //echo getcwd() . "<br>";
             chdir($directory);
+            //echo getcwd();
             
             $files = array_slice(scandir("./"), 2);
 
             // Höchste Nummer finden und 1 addieren für eindeutigen Namen
 
             //echo var_dump($files)[0];
+            //echo getcwd();
 
             $newFileNumber = 0;
             foreach ($files as $file){
                 $newFileNumber = max(explode('.', $file)[0], $newFileNumber);
             }
             $newFileNumber += 1;
-
+            
             $file = getcwd() . '/' . $newFileNumber . '.txt';
             
             // In File schreiben
 
             $content = $_GET['sub'];
+
             $myfile = fopen($file, "w") or die("Unable to open file!");
             fwrite($myfile, $content);
             fclose($myfile);
 
             // Execute der Bash befehle
 
-            chdir("../../../");
-            // echo getcwd();
+            chdir("../../tests/");
 
-            $submissionfile = "../beispiele/" . $beispiel[0][1] . "/muster.txt";
-            $testfile = $file;
+            $submissionfile = $file;
+
             $resultfile = "temp";
 
-            shell_exec("bash junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
+            $okay = 0;
+            $notokay = 0;
+            $passed = [];
+            $notpassed = [];
 
-            $resultfile = fopen($result);
-            $result = fread($result);
-            fclose($result);
+            $files = array_slice(scandir("./"), 2);
 
-            if ($result == "0") {
-                echo "okay";
-            } else {
-                unlink($testfile);
+            chdir("../../../testeinfügen/");
+
+            $count = 0;
+            $slice = array_slice(explode('/', $submissionfile), 6);
+
+            foreach ($files as $testfile){
+
+                $pre = array_slice(explode('/', getcwd()), 0, 5);
+                $prePath = implode('/', $pre) . "/beispiele";
+
+                $submissionfile = "../beispiele/" . $slice[0] . "/" . $slice[1] . "/" . $slice[2] . "/" . $slice[3];  // isPalindrom/submissions/3/8.txt
+                $testfile = $prePath . "/" . $slice[0] . "/tests/" . $testfile;  // isPalindrom/tests/1.txt
+
+                shell_exec("/bin/bash junit-codelabs.sh " . $submissionfile . " " . $testfile . " " . $resultfile);
+
+                $resultfilehandler = fopen(getcwd() . '/' . $resultfile . '/' . "verdict", "r");
+
+                $result = fread($resultfilehandler, filesize(getcwd() . '/' . $resultfile . '/' ."verdict"));
+
+                if ($result == "0") {
+                    $passed[] = end(explode('/', explode('.', $testfile)[0]));
+                    $okay++;
+                } else {
+                    $notpassed[] = end(explode('/', explode('.', $testfile)[0]));
+                    $notokay++;
+                }
             }
+
         ?>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (integrity hash)" crossorigin="anonymous" />
@@ -109,12 +137,8 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                 <a href="../ranking">Ranking</a>
                 <a href="#">
                     <?php
-                        $sql = "SELECT email FROM Person WHERE email='9039@htl.rennweg.at';";
-                        $stmt = $pdo->prepare($sql);
-                        $stmt->execute();
-                        $result = $stmt->fetchAll();
-                        $value = current(current(array_slice($result, 0, 1)));
-                        echo $value;
+                        $h = $_SESSION['email'];
+                        echo $h;
                     ?>
                 </a>
                 <a href="../logout.php"><i class="fas fa-sign-out-alt"></i></a>
@@ -123,7 +147,13 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
         <div class="container">
             <div class="header">
-                <p> Submission wurde Submitted </p>
+                <p> Submitted <br> 
+                <?php
+                    echo "Erfolgreiche Tests: " . $okay . "   " . "<br>Nicht erfolgreiche Tests: " . $notokay;
+                    echo "<br><br> Indexes der erfolgreich absolvierte Tests: <br>" . implode(', ', $passed);
+                    echo "<br> Indexes der nicht erfolgreich absolvierte Tests: <br>" . implode(', ', $notpassed);
+                ?>
+                </p>
             </div>
             <div class="testcase">
                 

@@ -1,0 +1,24 @@
+import org.junit.Test;
+
+import java.util.Arrays;
+
+import static org.junit.Assert.assertEquals;
+
+public class test{
+    @Test
+    public void LottoTipp() {
+        int[] v = new int[45];
+        for (int i = 0; i < 10000; i++) {
+            int[] tipp = submission.getLottoTipp();
+            assertEquals(tipp.length, 6);//Überprüft ob der Lottotipp 6 Zahlen enthält
+            assertEquals(Arrays.stream(tipp).distinct().filter(n -> (n > 0 && n <= 45)).filter(n -> v[n - 1]++ >= 0).count(), 6);//Überprüft, ob Zahlen mögliche Lottoergebnisse seien können
+        }
+
+        //Bei Verwendung von Zufallsgeneratoren sollte die Verteilung der Zahlen fast immer innerhalb 5 Standardabweichungen liegen
+        double avg = 10000d * 6 / 45;
+        double dev = Math.sqrt(39d / 45 * Math.pow(6d / 45, 2) + 6d / 45 * Math.pow(39d / 45, 2)) * Math.sqrt(10000);
+        for (int i = 0; i < 45; i++) {
+            if (avg - 5 * dev > v[i] || v[i] > avg + 5 * dev) throw new AssertionError("Es sollen zufällige Zahlen generiert werden.");
+        }
+    }
+}

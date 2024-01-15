@@ -91,34 +91,24 @@ public class Solution() {
                     echo "<p>Aufgabe " . $result[0][0] . ": " . $result[0][1] . "</p>";
                 ?>
             </div>
-            <div class="task">
-                <div class="input">
-                    <textarea id="input" readonly>
-                        <?php
+            <div class="content">
+                <div class="left">
+                    <form>
+                        <textarea id="input" name="input" readonly=true><?php
                             echo htmlspecialchars($input); 
-                        ?>
-                    </textarea>
+                            ?>
+                        </textarea>
+                    </form>
                 </div>
-                <div class="code">
-                    <div class="editor">
-                        <form id="submission" action="./submission.php">
-                            <textarea name="sub" id="sub">
-                                <?php 
-                                    //echo htmlspecialchars($s); 
-                                    echo htmlspecialchars($s);
-                                ?>
-                            </textarea>
-                            <input type="text" hidden=true value="<?php echo $id; ?>" name="beispiel">
-                        </form>
-                    </div>
-                    <div class="buttons">
-                        <tr>
-                            <td>
-                                <button id="ergebnisse">Ergebnisse</button>
-                            </td>
-                        </tr>
+                <div class="right">
+                    <form id="submission" action="./submission.php">
+                        <textarea name="sub" id="sub" spellcheck="false"><?php 
+                            echo htmlspecialchars($s);
+                            ?>
+                        </textarea>
+                        <input type="text" hidden=true value="<?php echo $id; ?>" name="beispiel">
                         <button id="run">Ausführen</button>
-                    </div>
+                    </form>
                 </div>
             </div>
             <script src="./script.js"></script>

@@ -1,0 +1,16 @@
+public class submission {
+public static boolean isPalindrom(String s){
+    s = s.toLowerCase().replace(" ", "");
+    int links = 0;
+    int rechts = s.length() - 1;
+
+    while (links < rechts) {
+        if (s.charAt(links) != s.charAt(rechts)) {
+            return false;
+        }
+        links++;
+        rechts--;
+    }
+    return true;
+}
+}

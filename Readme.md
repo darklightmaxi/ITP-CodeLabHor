@@ -8,20 +8,12 @@ In diesem Repo findet sich die Website des ITP-Projekts CodeLabHor.
 
 ## TODOs:
 
-WICHTIG
-3. Auch submit von Aufgaben zulassen
-9. Lehrer müssen Beispiele erstellen können
-16. Lehrer bekommen direkten Zugriff auf die Testordner
+MZ noch nicht erfüllt:
 
-HALB
-2. Result von Sandbox zurückliefern auf Website -
+MZ07 
+Lehrer können Tests bearbeiten und hinzufügen. - Nur bearbeiten fehlt
 
-WICHTIG TODO
-11. Lehrer können Musterlösungen ändern / erstellen
-13. Datenbank muss aktuell in creates.sql und inserts.sql sein
-14. Ranking von eingereichten Tests muss hinzugefügt werden
-15. Beispielranking
+TODO FÜR MZ07: TESTSBEARBEITEN INDEX.PHP überarbeiten, einen besseren Platz für den Link finden statt ganz unten bei beispielbearbeiten
 
-EVENTUELL OPTIONAL
-4. Passwort Hashen //
-12. Die Tests müssen ausführlich dokumentiert werden
+Links zu Rankings löschen -> Berat, Ich
+Homepage neu designen ohne Rankings -> Berat

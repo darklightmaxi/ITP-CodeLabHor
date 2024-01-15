@@ -10,10 +10,8 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
     <head>
         <?php
             include('../database_conn.php');
-            $schuelerid = 9039;
         ?>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-... (integrity hash)" crossorigin="anonymous" />
-
 
         <!-- Titel der Website -->
         <title>CodeLabHor - Die innovative Lernplattform</title>
@@ -66,12 +64,19 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
 
         <div class="container">
             <?php
+        
+                $sql = "SELECT rolle FROM Person WHERE email = '$h'";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+                $rolle = $stmt->fetch()['rolle'];
+        
                 // SQL-Abfrage ausführen
                 $sql = "SELECT * FROM Beispiel";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute();
                 $result = $stmt->fetchAll();
 
+                
                 
                 echo "<table>";
                 echo "<th>";
@@ -83,10 +88,15 @@ if (isset($_SESSION['email']) AND isset($_SESSION['personid'])) {
                     echo "<td><a href='../beispiel/index.php?beispiel=" . $beispiel[0] . "' class='link'> Aufgabe " . $beispiel[0] . ": " . $beispiel[1] . "</a></td>";
                     echo "<td><a href='../testeinfügen/index.php?beispiel=" . $beispiel[0] . "'>Testcases einfügen</a></td>";
                     echo "<td><a href='../beispielranking'>Ranking</a></td>";
-                    echo "<td><a href='../beispiel/index.php?beispiel=" . $beispiel[0] . "'> Anzeigen </a></td>";
+                    echo "<td><a href='../beispiel/index.php?beispiel=" . $beispiel[0] . "'> Anzeigen </a></td>"; 
+                    if($rolle == "L"){
+                        echo "<td><a href='../beispielbearbeiten/index.php?beispiel=" . $beispiel[0] . "'>Bearbeiten</a></td>";
+                    }                   
                     echo "</tr>";
                 }
-                
+                if ($rolle == "L"){
+                    echo "<tr> <td><a href='../beispieleinfügen/index.php'>Aufgabe hinzufügen</a></td> </tr>";
+                }
                 echo "</table>";
                 
             ?>

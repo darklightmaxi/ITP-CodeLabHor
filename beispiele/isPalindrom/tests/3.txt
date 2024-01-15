@@ -1,5 +1,11 @@
-@Test
-public void Palindrom_Mit_GrossKlein_Palindrom() {
-    assertTrue(Main.isPalindrom("Madam"));
-    assertTrue(Main.isPalindrom("rAceCAr"));
-} 
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+public class test {
+    @Test
+    public void Palindrom_Mit_GrossKlein_Palindrom() {
+        assertTrue(submission.isPalindrom("Madam"));
+        assertTrue(submission.isPalindrom("rAceCAr"));
+    }
+}

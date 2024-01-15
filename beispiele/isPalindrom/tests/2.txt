@@ -1,6 +1,13 @@
-@Test
-public void Palindrom_Mit_Nicht_Palindrom() {
-    assertFalse(Main.isPalindrom("hello"));
-    assertFalse(Main.isPalindrom("world"));
-    assertFalse(Main.isPalindrom("This is not a palindrome"));
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
+
+public class test {
+    @Test
+    public void Palindrom_Mit_Nicht_Palindrom() {
+        assertFalse(submission.isPalindrom("hello"));
+        assertFalse(submission.isPalindrom("world"));
+        assertFalse(submission.isPalindrom("This is not a palindrome"));
+    }
 }
