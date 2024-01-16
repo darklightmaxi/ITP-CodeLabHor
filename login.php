@@ -41,7 +41,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
             
 
             if ($row['email'] === $uname && $row['password'] === $pass) {
-                if ($row['klasseid'] === NULL){
+                if ($row['klasseid'] === NULL && $row['role'] === "S"){
                     header("Location: selectclass.php");
                     exit();
                 }
