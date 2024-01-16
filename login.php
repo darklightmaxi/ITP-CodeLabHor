@@ -36,10 +36,15 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 
         if (mysqli_num_rows($result) === 1) {
             $row = mysqli_fetch_assoc($result);
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['personid'] = $row['personid'];
+            
 
             if ($row['email'] === $uname && $row['password'] === $pass) {
-                $_SESSION['email'] = $row['email'];
-                $_SESSION['personid'] = $row['personid'];
+                if ($row['klasseid'] === NULL){
+                    header("Location: selectclass.php");
+                    exit();
+                }
                 header("Location: homepage\index.php");
                 exit();
             }else{

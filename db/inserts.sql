@@ -21,7 +21,8 @@ VALUES
 insert into Person(email, password, nachname, vorname, rolle, fk_klasse)
 VALUES
     ('9039@htl.rennweg.at', '1', 'Kniely', 'Maximilian', 'S', '5AX'),
-    ('9118@htl.rennweg.at', '1', 'Bierbaumer', 'Martin', 'L', '5CN'),
+    ('9118@htl.rennweg.at', '1', 'Bierbaumer', 'Martin', 'S', '5CN'),
+    ('9178@htl.rennweg.at', '1', 'Congar', 'Berat', 'S', NULL),
     ('bre@htl.rennweg.at', '1', 'Breunig', 'Franz', 'L', NULL),
     ('hol@htl.rennweg.at', '1', 'Hölzl', 'Günther', 'L', NULL),
     ('kle@htl.rennweg.at', '1', 'Klein', 'Christian', 'L', NULL),
