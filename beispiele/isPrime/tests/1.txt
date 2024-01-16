@@ -1,0 +1,44 @@
+import org.junit.Test;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+
+public class test{
+    @Test
+    public void Prime_Mit_Primzahlen() {
+        assertTrue(submission.isPrime(2));
+        assertTrue(submission.isPrime(3));
+        assertTrue(submission.isPrime(5));
+        assertTrue(submission.isPrime(7));
+        assertTrue(submission.isPrime(11));
+        assertTrue(submission.isPrime(13));
+        assertTrue(submission.isPrime(17));
+        assertTrue(submission.isPrime(19));
+    }
+
+    @Test
+    public void isPrime_Mit_Nicht_Primzahlen() {
+        assertFalse(submission.isPrime(1));
+        assertFalse(submission.isPrime(4));
+        assertFalse(submission.isPrime(6));
+        assertFalse(submission.isPrime(8));
+        assertFalse(submission.isPrime(9));
+        assertFalse(submission.isPrime(10));
+        assertFalse(submission.isPrime(15));
+        assertFalse(submission.isPrime(25));
+    }
+
+    @Test
+    public void isPrime_Mit_Großen_Primzahlen() {
+        assertTrue(submission.isPrime(997));
+        assertTrue(submission.isPrime(9973));
+        assertTrue(submission.isPrime(104729));
+    }
+
+    @Test
+    public void isPrime_Mit_Großen_Nicht_Primzahlen() {
+        assertFalse(submission.isPrime(1000));
+        assertFalse(submission.isPrime(10000));
+        assertFalse(submission.isPrime(100001));
+        assertFalse(submission.isPrime(1000000));
+    }
+}

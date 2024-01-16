@@ -1,0 +1,19 @@
+import org.junit.Test;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+
+public class test{
+    @Test
+    public void IsLeapYear_Mit_LeapYear() {
+        assertTrue(submission.isLeapYear(2000));
+        assertTrue(submission.isLeapYear(2020));
+        assertTrue(submission.isLeapYear(2400));
+    }
+
+    @Test
+    public void IsLeapYear_Mit_Nicht_LeapYear() {
+        assertFalse(submission.isLeapYear(1900));
+        assertFalse(submission.isLeapYear(2100));
+        assertFalse(submission.isLeapYear(2022));
+    }
+}
